@@ -3,18 +3,17 @@ import java.util.ArrayList;
 
 public class Cab {
 
-    //public Driver driver;
+    public Driver driver;
     public ArrayList<TaxiTrip> taxiTrips;
     private int licensePlate;
     private int fuelLevel;
-    private boolean availability;
+    private boolean isAvailable;
 
-    public Cab(int licensePlate, int fuelLevel, boolean availability){
+    public Cab(int licensePlate, int fuelLevel, boolean isAvailable){
         this.licensePlate = licensePlate;
         this.fuelLevel = fuelLevel;
-        this.availability = availability;
-
-        //driver = new Driver();
+        this.isAvailable = isAvailable;
+        this.driver = null;
         taxiTrips = new ArrayList<TaxiTrip>();
     }
 
@@ -30,12 +29,16 @@ public class Cab {
         this.fuelLevel = fuelLevel;
     }
 
-    public boolean getAvailability(){
-        return availability;
+    public boolean getAvailable(){
+        return isAvailable;
     }
 
-    public void setAvailability(boolean availability) {
-        this.availability = availability;
+    public void setAvailable(boolean available) {
+        this.isAvailable = available;
+    }
+
+    public void setDriver(Driver driver){
+        this.driver = driver;
     }
 
 }
