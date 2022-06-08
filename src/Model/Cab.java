@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Cab {
 
-    public Driver driver;
-    public ArrayList<TaxiTrips> taxiTrips;
+    //public Driver driver;
+    public ArrayList<TaxiTrip> taxiTrips;
     private int licensePlate;
     private int fuelLevel;
     private boolean availability;
@@ -14,8 +14,8 @@ public class Cab {
         this.fuelLevel = fuelLevel;
         this.availability = availability;
 
-        driver = new Driver();
-        taxiTrips = new ArrayList<TaxiTrips>();
+        //driver = new Driver();
+        taxiTrips = new ArrayList<TaxiTrip>();
     }
 
     public int getLicensePlate() {
