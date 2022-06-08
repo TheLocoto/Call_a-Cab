@@ -48,11 +48,16 @@ public class TaxiTripControllerEXAMPLE {
 
     public void informationAboutTaxi(){
         setTaxiTripCost();
-        view.printTaxiTripDetails(getTaxiTripDestiny(),getTaxiTripPassengers(),getTaxiTripCost());
+        view.printTaxiTripDetails(getTaxiTripDestiny(),getTaxiTripAddress(),getTaxiTripPassengers(),getTaxiTripCost());
     }
 
-    public void requestTaxi(){
+    public void requestTaxiTrip(){
         view.taxiTripRequestMessage();
-        view.taxiTripDates();
+        String destiny = view.enterDestinyMessage();
+        setTaxiTripDestiny(destiny);
+        String address = view.enterAddressMessage();
+        setTaxiTripAddress(address);
+        int passengers = view.enterPassengersMessage();
+        setTaxiTripPassengers(passengers);
     }
 }

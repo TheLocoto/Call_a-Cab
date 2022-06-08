@@ -7,11 +7,12 @@ public class mainEXAMPLE {
     public static void main(String arg[]){
 
         TaxiTripView taxiTripView = new TaxiTripView();
-        TaxiTrip taxiTripModel = new TaxiTrip(3,"cochabamba","santa cruj");
-        TaxiTrip taxiExample = taxiTripView.taxiTripDates();
+        TaxiTrip taxiTripModel = new TaxiTrip();
+
 
         TaxiTripControllerEXAMPLE taxiTripController= new TaxiTripControllerEXAMPLE(taxiTripModel,taxiTripView);
 
+        taxiTripController.requestTaxiTrip();
         taxiTripController.informationAboutTaxi();
 
     }

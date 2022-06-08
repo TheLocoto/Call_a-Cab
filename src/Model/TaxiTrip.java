@@ -10,6 +10,8 @@ public class TaxiTrip {
         this.address = address;
         this.destiny = destiny;
     }
+    public TaxiTrip(){
+    }
 
     public int getCost() {
         return cost;
