@@ -1,5 +1,8 @@
 package Model;
 
+
+import Utils.DriverObject;
+
 public class Driver {
     private String name;
     private int ci;
@@ -53,5 +56,9 @@ public class Driver {
 
     public void setAvailability(boolean availability) {
         this.availability = availability;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
