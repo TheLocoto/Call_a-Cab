@@ -10,12 +10,12 @@ public class Driver {
     private int age;
     private boolean availability;
 
-    public Driver(String name, int ci, int phone, int age) {
+    public Driver(String name, int ci, int phone, int age, boolean availability) {
         this.name = name;
         this.ci = ci;
         this.phone = phone;
         this.age = age;
-        this.availability = true;
+        this.availability = availability;
     }
 
     public String getName() {
