@@ -10,10 +10,10 @@ public class mainEXAMPLE {
         TaxiTrip taxiTripModel = new TaxiTrip();
 
 
-        TaxiTripControllerEXAMPLE taxiTripController= new TaxiTripControllerEXAMPLE(taxiTripModel,taxiTripView);
+        TaxiTripControllerEXAMPLE taxiTripController= new TaxiTripControllerEXAMPLE();
 
         taxiTripController.requestTaxiTrip();
-        taxiTripController.informationAboutTaxi();
+        taxiTripController.informationAboutTaxiTrip();
 
     }
 }

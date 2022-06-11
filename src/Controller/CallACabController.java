@@ -24,7 +24,7 @@ public class CallACabController {
     public CallACabController(){
         this.taxiTripModel=new TaxiTrip();
         this.taxiTripView=new TaxiTripView();
-        this.cabModel=new Cab();
+        //this.cabModel=new Cab();
     }
 
 }
