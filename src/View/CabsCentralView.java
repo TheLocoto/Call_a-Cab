@@ -16,6 +16,11 @@ public class CabsCentralView {
         System.out.println("---------------------------");
     }
 
+    public void showTaxiTripStatusMessage(Cab cab){
+        if(cab != null) System.out.println("Se le asigno el taxi con matricula "+cab.getLicensePlate()+"\nConducido por "+cab.driver.getName());
+        else System.out.println("No se puede en este momento, intente mas tarde");
+    }
+
     public void assignCabToClient(){}
 
     public void showDriversList(ArrayList<Driver> driversList){

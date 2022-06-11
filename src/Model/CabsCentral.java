@@ -18,8 +18,21 @@ public class CabsCentral {
         this.driversList = driversList;
     }
 
-    private boolean checkCabAvailability(Cab cab){
-        return cab.getAvailable();
+    private boolean checkCabsAvailability(){
+        boolean cabFound = false, driverFound = false;
+        for(Cab cab:cabsList){
+            if (cab.getAvailable()) {
+                cabFound = true;
+                break;
+            }
+        }
+        for(Driver driver:driversList){
+            if (driver.isAvailable()) {
+                driverFound = true;
+                break;
+            }
+        }
+        return cabFound && driverFound;
     }
 
     /**
@@ -32,6 +45,7 @@ public class CabsCentral {
         while(i< cabsList.size() && freeCab == null){
             if(cabsList.get(i).getAvailable()){
                 freeCab = cabsList.get(i);
+                freeCab.setAvailable(false);
             }
             i++;
         }
@@ -48,6 +62,7 @@ public class CabsCentral {
         while(i< driversList.size() && driverAvailable == null){
             if(driversList.get(i).isAvailable()){
                 driverAvailable = driversList.get(i);
+                driverAvailable.setAvailability(false);
             }
             i++;
         }
@@ -65,6 +80,39 @@ public class CabsCentral {
             freeCab.setDriver(getDriverAvailable());
         return freeCab;
     }
+
+    /**
+     * This method sets cab's driver to null when a TaxiTrip is finished
+     * @param cab receives the cap that will eliminate its driver
+     */
+    public void takeOffDriver(Cab cab){
+        //cab.driver.setAvailability(true);
+        cab.setDriver(null);
+    }
+
+    /**
+     * This method set the cab's availability with a given status boolean
+     * @param cab is the cab which will modify its availability
+     */
+    public void enableCab(Cab cab){
+        cab.setAvailable(true);
+        takeOffDriver(cab);
+    }
+
+    public Cab sendAssignedCab(/*TaxiTrip taxiTrip*/){
+        String message;
+        Cab cab = null;
+        if(checkCabsAvailability()){
+            cab = getAssignedDriver();
+            //cab.addTaxiTrip(taxiTrip);
+        }
+        else{
+            enableCab(cabsList.get((int) (Math.random()*cabsList.size()))); //escoge un cab random y lo libera <controlar solo los ocupados>
+        }
+        return cab;
+    }
+
+
 
     public ArrayList<Cab> getCabsList() {
         return cabsList;
