@@ -2,6 +2,9 @@ package Utils;
 
 import Model.Driver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class is for only instance objects of class Driver
  * also for can use it in main
@@ -17,4 +20,25 @@ public class DriverObject {
     Driver jimenaRocha = new Driver("Jimena Rocha", 44456789, 6993515, 31, false);
     Driver gabrielaBerrios = new Driver("Gabriela Berrios", 42415445, 7668954, 29, true);
     Driver mateoEscalera = new Driver("Mateo Escalera", 44569785, 6521445, 45, false);
+
+
+    /**
+     * This method is collect all drivers in a collectDriversDataBase list and can
+     * will ussed in future with the program.
+     */
+    public void collectDriversDataBase()
+    {
+        List<Driver> driversDataBase = new ArrayList<>();
+        driversDataBase.add(estebanArce);
+        driversDataBase.add(marioEscalera);
+        driversDataBase.add(andreaMamani);
+        driversDataBase.add(carlosEscalante);
+        driversDataBase.add(jhonCena);
+        driversDataBase.add(marioColque);
+        driversDataBase.add(sergioContreras);
+        driversDataBase.add(jimenaRocha);
+        driversDataBase.add(gabrielaBerrios);
+        driversDataBase.add(mateoEscalera);
+    };
 }
+
