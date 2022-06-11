@@ -105,9 +105,13 @@ public class TaxiTripController {
         }
     }
 
-    public void taxiTrip(){
+    public void createTaxiTrip(){
         requestTaxiTrip();
         confirmTaxiTrip();
+    }
+
+    public TaxiTrip getTaxiTrip(){
+        return model;
     }
 
 }

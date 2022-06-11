@@ -9,7 +9,7 @@ public class ChargeBar {
     }
 
     public void chargeBar(){
-        int randomNumber = (int)(Math.random() * 20-20+1) + 10;
+        int randomNumber = (int)(Math.random() * 20-10+1) + 10;
         try {
             for (int counter = 0; counter < randomNumber; counter++) {
                 TimeUnit.SECONDS.sleep(1);

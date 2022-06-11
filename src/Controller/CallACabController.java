@@ -22,7 +22,7 @@ public class CallACabController {
     }
 
     public void callACabClientApp(){
-        //taxiTripController.taxiTrip(); corregiR
+        //taxiTripController.createTaxiTrip(); corregiR
         /*
          *
          *
