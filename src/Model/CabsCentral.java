@@ -21,7 +21,7 @@ public class CabsCentral {
     private boolean checkCabsAvailability(){
         boolean cabFound = false, driverFound = false;
         for(Cab cab:cabsList){
-            if (cab.getAvailable()) {
+            if (cab.getAvailability()) {
                 cabFound = true;
                 break;
             }
@@ -43,9 +43,9 @@ public class CabsCentral {
         int i=0;
         Cab freeCab = null;
         while(i< cabsList.size() && freeCab == null){
-            if(cabsList.get(i).getAvailable()){
+            if(cabsList.get(i).getAvailability()){
                 freeCab = cabsList.get(i);
-                freeCab.setAvailable(false);
+                freeCab.setAvailability(false);
             }
             i++;
         }
@@ -95,7 +95,7 @@ public class CabsCentral {
      * @param cab is the cab which will modify its availability
      */
     public void enableCab(Cab cab){
-        cab.setAvailable(true);
+        cab.setAvailability(true);
         takeOffDriver(cab);
     }
 
