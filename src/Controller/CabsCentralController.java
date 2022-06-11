@@ -30,6 +30,13 @@ public class CabsCentralController {
 
     public void showTaxiTripStatusMessage(Cab cab){view.showTaxiTripStatusMessage(cab);}
 
+    public int getClientMenuSecondView(){
+        return view.clientMenuSecondView();}
+
+    public int  getClientMenuFirstView(){
+        return view.clientMenuFirstView();
+    }
+
     public void generateCabList(){
         view.insertingCabsMessage();
         model.generateCabList();
@@ -39,17 +46,4 @@ public class CabsCentralController {
         view.insertingDriversMessage();
         model.generateDriverList();
     }
-
-    public void requestATaxi(){
-        int opcion = view.clientMenuFirstView();
-        while (opcion!=1){
-
-
-            opcion = view.clientMenuSecondView();
-        }
-    }
-
-
-
-
 }

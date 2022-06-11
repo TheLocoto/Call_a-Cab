@@ -14,15 +14,6 @@ public class mainEXAMPLE {
         CallACabController callACabController = new CallACabController();
 
         callACabController.callACabClientApp();
-        //callACabController.callACabWorkerApp();
-
-
-
-
-
-
-
-
 
     }
 }

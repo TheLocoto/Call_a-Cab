@@ -111,8 +111,24 @@ public class TaxiTripController {
         confirmTaxiTrip();
     }
 
+    public void createMoreTaxiTrips(){
+        requestTaxiTripAgain();
+        confirmTaxiTrip();
+    }
+
     public TaxiTrip getTaxiTrip(){
         return model;
+    }
+
+    public int taxiTrip(int attemps){
+        if (attemps==0) {
+            createTaxiTrip();
+            attemps++;
+        }
+        else{
+            createMoreTaxiTrips();
+        }
+        return attemps;
     }
 
 }

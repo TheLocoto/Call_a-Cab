@@ -48,6 +48,7 @@ public class CabsCentralView {
 
     public int clientMenuSecondView(){
         int opcion;
+        System.out.println("You just arrived at your destination");
         System.out.println("Do you need another taxi?");
         System.out.println("1: Yes");
         System.out.println("2: No");
