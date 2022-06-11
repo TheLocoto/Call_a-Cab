@@ -6,12 +6,12 @@ import View.TaxiTripView;
 /**
  * TaxiTripController
  */
-public class TaxiTripControllerEXAMPLE {
+public class TaxiTripController {
 
     private TaxiTrip model;
     private TaxiTripView view;
 
-    public TaxiTripControllerEXAMPLE() {
+    public TaxiTripController() {
         this.model = new TaxiTrip();
         this.view = new TaxiTripView();
     }
@@ -103,6 +103,11 @@ public class TaxiTripControllerEXAMPLE {
         if (opcion > 3){
             view.incorrectAnswer();
         }
+    }
+
+    public void taxiTrip(){
+        requestTaxiTrip();
+        confirmTaxiTrip();
     }
 
 }

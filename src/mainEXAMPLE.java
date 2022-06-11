@@ -1,4 +1,5 @@
-import Controller.TaxiTripControllerEXAMPLE;
+import Controller.CallACabController;
+import Controller.TaxiTripController;
 import Model.TaxiTrip;
 import View.TaxiTripView;
 
@@ -6,14 +7,9 @@ public class mainEXAMPLE {
 
     public static void main(String arg[]){
 
-        TaxiTripView taxiTripView = new TaxiTripView();
-        TaxiTrip taxiTripModel = new TaxiTrip();
+        CallACabController callACabController = new CallACabController();
 
-
-        TaxiTripControllerEXAMPLE taxiTripController= new TaxiTripControllerEXAMPLE();
-
-        taxiTripController.requestTaxiTrip();
-        taxiTripController.informationAboutTaxiTrip();
+        callACabController.callACabApp();
 
     }
 }
