@@ -118,5 +118,9 @@ public class Cab {
         this.driver=null;
     }
 
+    public void addTaxiTrip(TaxiTrip taxiTrip){
+        taxiTrips.add(taxiTrip);
+    }
+
 
 }

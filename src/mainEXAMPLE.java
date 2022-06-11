@@ -12,9 +12,9 @@ public class mainEXAMPLE {
     public static void main(String arg[]){
 
         CallACabController callACabController = new CallACabController();
-        //callACabController.callACabApp();
 
-        callACabController.callACabWorkerApp();
+        callACabController.callACabClientApp();
+        //callACabController.callACabWorkerApp();
 
 
 
