@@ -6,11 +6,14 @@ public class mainEXAMPLE {
 
     public static void main(String arg[]){
 
-        TaxiTripControllerEXAMPLE taxiTripController= new TaxiTripControllerEXAMPLE();
+        TaxiTripView taxiTripView = new TaxiTripView();
+        TaxiTrip taxiTripModel = new TaxiTrip();
+
+
+        TaxiTripControllerEXAMPLE taxiTripController= new TaxiTripControllerEXAMPLE(taxiTripModel,taxiTripView);
 
         taxiTripController.requestTaxiTrip();
-        taxiTripController.informationAboutTaxiTrip();
+        taxiTripController.informationAboutTaxi();
 
-        taxiTripController.confirmTaxiTrip();
     }
 }
