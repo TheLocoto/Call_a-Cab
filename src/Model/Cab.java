@@ -13,7 +13,7 @@ public class Cab {
         this.licensePlate = licensePlate;
         this.fuelLevel = fuelLevel;
         this.isAvailable = isAvailable;
-        this.driver = null;
+        driver = null;
         taxiTrips = new ArrayList<TaxiTrip>();
     }
 
@@ -33,12 +33,12 @@ public class Cab {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        this.isAvailable = available;
-    }
-
     public void setDriver(Driver driver){
         this.driver = driver;
+    }
+
+    public void resetDriver(){
+        this.driver=null;
     }
 
 }

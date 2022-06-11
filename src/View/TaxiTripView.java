@@ -12,6 +12,9 @@ public class TaxiTripView {
         this.scanner=new Scanner(System.in);
     }
 
+    /**
+     * First
+     */
     public void taxiTripRequestMessage(){
         System.out.println("PLEASE ENTER YOUR DATES");
     }
@@ -33,11 +36,38 @@ public class TaxiTripView {
     }
 
     public void printTaxiTripDetails(String destiny,String address, int passengers, int cost){
-        System.out.println("This is your dates: ");
+        System.out.println("This is your dates");
         System.out.println("Destiny: " + destiny);
-        System.out.println("This is your address: "+ address);
-        System.out.println("Number of passengers: " + passengers);
+        System.out.println("Address: "+ address);
+        System.out.println("Passengers: " + passengers);
         System.out.println("Cost: " + cost);
     }
 
+    public String requestTaxiTripAgain(){
+        String resetScanner = scanner.nextLine();
+        return resetScanner;
+    }
+
+    public int menuTaxiTripMessage(){
+        int opcion;
+        System.out.println("Do you agree with the details?");
+        System.out.println("1: Yes, I agree");
+        System.out.println("2: No, I don't like the price");
+        System.out.println("3: No, My dates are incorrect");
+
+        opcion = scanner.nextInt();
+        return opcion;
+    }
+
+    public void validatePassengersMessage(){
+        System.out.println("The taxi don´t accept more of 5 people");
+    }
+
+    public void incorrectAnswer(){
+        System.out.println("Incorrect answer");
+    }
+
+    public void finishMessage(){
+        System.out.println("Thanks your date are share, now we te daremos un taxi XD");
+    }
 }
