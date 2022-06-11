@@ -75,6 +75,7 @@ public class TaxiTripController {
     }
 
     public void confirmTaxiTrip(){
+        informationAboutTaxiTrip();
         int opcion = view.menuTaxiTripMessage();
         while(opcion!=1) {
             incorrectDates(opcion);

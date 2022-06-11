@@ -6,6 +6,7 @@ import Model.Cab;
 import Model.TaxiTrip;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CallACabController {
 
@@ -21,35 +22,39 @@ public class CallACabController {
         this.cabController = new CabController();
     }
 
+    /*public void callACabClientApp(){
+
+
+        System.out.println("DESEAS PEDIR UN TAXI?");
+        Scanner scanner = new Scanner(System.in);
+        int opcion = scanner.nextInt();
+
+        /*while (opcion != 1) {
+
+            taxiTripController.createTaxiTrip();
+            cabsCentralController.generateCabList();
+            cabsCentralController.generateDriversList();
+            //Cab cabSent = cabsCentralController.sendCabToClient(taxiTrip);
+            //cabsCentralController.showTaxiTripStatusMessage(cabSent);
+
+            Cab cabSent = cabsCentralController.sendCabToClient(taxiTripController.getTaxiTrip());
+            cabsCentralController.showTaxiTripStatusMessage(cabSent);
+
+            System.out.println("¿DESEAS SEGUIR PIDIENDO?");
+            opcion = scanner.nextInt();
+        }
+
+    }*/
+
     public void callACabClientApp(){
-        //taxiTripController.createTaxiTrip(); corregiR
-        /*
-         *
-         *
-         * */
-        TaxiTrip firstTrip = new TaxiTrip(3, "Circunvalacion esq. Robles", "Terminal de buses", 20);
-        TaxiTrip secondTrip = new TaxiTrip(2, "Atahuallpa esq. Semapa", "Hupermall", 15);
-
-        cabsCentralController.generateCabList();
-        cabsCentralController.generateDriversList();
-        //Cab cabSent = cabsCentralController.sendCabToClient(taxiTrip);
-        //cabsCentralController.showTaxiTripStatusMessage(cabSent);
-
-        Cab cabSent1 = cabsCentralController.sendCabToClient(firstTrip);
-        cabsCentralController.showTaxiTripStatusMessage(cabSent1);
-
-        Cab cabSent2 = cabsCentralController.sendCabToClient(secondTrip);
-        cabsCentralController.showTaxiTripStatusMessage(cabSent2);
-
+        int opcion = cabsCentralController.getView().clientMenuFirstView();
+        while (opcion!=2){
+            taxiTripController.createTaxiTrip();
+            cabsCentralController.generateCabList();
+            cabsCentralController.generateDriversList();
+            Cab cabSent = cabsCentralController.sendCabToClient(taxiTripController.getTaxiTrip());
+            cabsCentralController.showTaxiTripStatusMessage(cabSent);
+            opcion = cabsCentralController.getView().clientMenuSecondView();
+        }
     }
-
-    public void callACabWorkerApp(){
-        cabsCentralController.generateCabList();
-        cabsCentralController.generateDriversList();
-        //System.out.println(cabsCentralController.getCabsListCabsCentral().size());
-        //System.out.println(cabsCentralController.getDriversListCabsCentral().size());
-    }
-
 }
-
-//  ANTIGUO

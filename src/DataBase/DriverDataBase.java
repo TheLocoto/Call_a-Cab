@@ -34,11 +34,11 @@ public class DriverDataBase {
         driverList.add(andreaMamani);
         driverList.add(carlosEscalante);
         driverList.add(jhonCena);
-        driverList.add(marioColque);
+        /*driverList.add(marioColque);
         driverList.add(sergioContreras);
         driverList.add(jimenaRocha);
         driverList.add(gabrielaBerrios);
-        driverList.add(mateoEscalera);
+        driverList.add(mateoEscalera);*/
     }
 
     public ArrayList<Driver> getDriverList() {

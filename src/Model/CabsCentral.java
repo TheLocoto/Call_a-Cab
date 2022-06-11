@@ -11,6 +11,7 @@ import DataBase.CabDataBase;
 import DataBase.DriverDataBase;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class CabsCentral {
     ArrayList<Cab> cabsList;
@@ -142,4 +143,8 @@ public class CabsCentral {
         driverDataBase.generateDriverList();
         setDriversList(driverDataBase.getDriverList());
     }
+
+    //public void generateList(Map<TaxiTrip,>){
+
+    //}
 }

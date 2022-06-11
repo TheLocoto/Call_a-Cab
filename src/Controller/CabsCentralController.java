@@ -17,6 +17,8 @@ public class CabsCentralController {
         this.view = new CabsCentralView();
     }
 
+    public CabsCentralView getView(){return view;}
+
     public ArrayList<Driver> getDriversListCabsCentral() {
         return model.getDriversList();
     }
@@ -36,6 +38,15 @@ public class CabsCentralController {
     public void generateDriversList(){
         view.insertingDriversMessage();
         model.generateDriverList();
+    }
+
+    public void requestATaxi(){
+        int opcion = view.clientMenuFirstView();
+        while (opcion!=1){
+
+
+            opcion = view.clientMenuSecondView();
+        }
     }
 
 

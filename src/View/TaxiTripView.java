@@ -68,6 +68,6 @@ public class TaxiTripView {
     }
 
     public void finishMessage(){
-        System.out.println("Thanks your date are share, now we te daremos un taxi XD");
+        System.out.println("Thank you! Now we will assign you a driver");
     }
 }

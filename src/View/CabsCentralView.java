@@ -22,8 +22,8 @@ public class CabsCentralView {
     }
 
     public void showTaxiTripStatusMessage(Cab cab){
-        if(cab!=null && cab.driver!=null) System.out.println("Se le asigno el taxi con matricula "+cab.getLicensePlate()+"\nConducido por "+cab.driver.getName());
-        else System.out.println("No se puede en este momento, intente mas tarde");
+        if(cab!=null && cab.driver!=null) System.out.println("They assigned him a taxi with a license plate "+cab.getLicensePlate()+"\nconducted by "+cab.driver.getName());
+        else System.out.println("No taxi found please try again later");
     }
 
     public void assignCabToClient(){}
@@ -35,15 +35,33 @@ public class CabsCentralView {
     }
 
     public void insertingCabsMessage(){
-        System.out.println("Inserting list of cabs wait a moment");
+        System.out.println("Assigning you a taxi and driver");
         chargeBar.chargeBar();
         System.out.println("Finish");
     }
 
     public void insertingDriversMessage(){
-        System.out.println("Inserting list of drivers wait a moment");
+        System.out.println("Confirming the shipment of your taxi trip");
         chargeBar.chargeBar();
         System.out.println("Finish");
+    }
+
+    public int clientMenuSecondView(){
+        int opcion;
+        System.out.println("Do you need another taxi?");
+        System.out.println("1: Yes");
+        System.out.println("2: No");
+        opcion = input.nextInt();
+        return  opcion;
+    }
+
+    public int clientMenuFirstView(){
+        int opcion;
+        System.out.println("Do you need a taxi?");
+        System.out.println("1: Yes");
+        System.out.println("2: No");
+        opcion = input.nextInt();
+        return  opcion;
     }
 
 }
