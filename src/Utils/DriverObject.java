@@ -2,10 +2,11 @@ package Utils;
 
 import Model.Driver;
 
-
+/**
+ * This class is for only instance objects of class Driver
+ * also for can use it in main
+ */
 public class DriverObject {
-
-
     Driver estebanArce = new Driver("Esteban Arce", 45215257, 7584589, 25, true);
     Driver marioEscalera = new Driver("Mario Escalera", 46521578, 6895475, 28, true);
     Driver andreaMamani = new Driver("Andrea Mamani", 48798585, 79545845, 23, true);
@@ -16,5 +17,4 @@ public class DriverObject {
     Driver jimenaRocha = new Driver("Jimena Rocha", 44456789, 6993515, 31, false);
     Driver gabrielaBerrios = new Driver("Gabriela Berrios", 42415445, 7668954, 29, true);
     Driver mateoEscalera = new Driver("Mateo Escalera", 44569785, 6521445, 45, false);
-
 }
