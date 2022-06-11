@@ -1,4 +1,6 @@
 package Model;
+import DataBase.CabDataBase;
+
 import java.util.ArrayList;
 
 /**
@@ -16,6 +18,7 @@ public class Cab {
     private String licensePlate;
     private boolean availability;
     private int fuelLevel;
+    private CabDataBase cabDataBase;
 
     /**
      * This is the constructor method of the Cab class.
@@ -35,9 +38,13 @@ public class Cab {
         this.licensePlate = licensePlate;
         this.fuelLevel = fuelLevel;
         this.availability = availability;
-
+        this.cabDataBase = new CabDataBase();
         this.driver = null;
         taxiTrips = new ArrayList<TaxiTrip>();
+    }
+
+    public Cab(){
+
     }
 
     /**
@@ -110,5 +117,6 @@ public class Cab {
     public void resetDriver(){
         this.driver=null;
     }
+
 
 }

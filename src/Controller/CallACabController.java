@@ -1,6 +1,10 @@
 package Controller;
 
 
+import Model.Cab;
+
+import java.util.ArrayList;
+
 public class CallACabController {
 
     private TaxiTripController taxiTripController;
@@ -10,13 +14,20 @@ public class CallACabController {
 
     public CallACabController(){
         this.taxiTripController = new TaxiTripController();
-        //this.cabsCentralController = new CabsCentralController();
+        this.cabsCentralController = new CabsCentralController();
         //this.driverController = new DriverController();
-        //this.cabController = new CabController();
+        this.cabController = new CabController();
     }
 
-    public void callACabApp(){
+    public void callACabClientApp(){
         taxiTripController.taxiTrip();
+    }
+
+    public void callACabWorkerApp(){
+        cabsCentralController.generateCabList();
+        cabsCentralController.generateDriversList();
+        System.out.println(cabsCentralController.getCabsListCabsCentral().size());
+        System.out.println(cabsCentralController.getDriversListCabsCentral().size());
     }
 
 }

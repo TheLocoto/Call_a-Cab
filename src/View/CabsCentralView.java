@@ -1,13 +1,18 @@
 package View;
 import Model.Cab;
 import Model.Driver;
+import Utils.ChargeBar;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CabsCentralView {
     Scanner input;
+    ChargeBar chargeBar;
+
     public CabsCentralView() {
         this.input = new Scanner(System.in);
+        this.chargeBar = new ChargeBar();
     }
 
     public void showWelcome(){
@@ -28,4 +33,17 @@ public class CabsCentralView {
             System.out.println(driver.toString());
         }
     }
+
+    public void insertingCabsMessage(){
+        System.out.println("Inserting list of cabs wait a moment");
+        chargeBar.chargeBar();
+        System.out.println("Finish");
+    }
+
+    public void insertingDriversMessage(){
+        System.out.println("Inserting list of drivers wait a moment");
+        chargeBar.chargeBar();
+        System.out.println("Finish");
+    }
+
 }

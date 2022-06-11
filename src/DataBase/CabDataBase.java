@@ -26,10 +26,10 @@ public class CabDataBase {
         Cab cab4 = new Cab("Toyota Corona", "86", "2352HFG", 10, false);
         Cab cab5 = new Cab("Toyota Corona", "2000", "3634NGD", 30, false);
 
-        addCab(cab1);
-        addCab(cab2);
-        addCab(cab3);
-        addCab(cab4);
-        addCab(cab5);
+        cabList.add(cab1);
+        cabList.add(cab2);
+        cabList.add(cab3);
+        cabList.add(cab4);
+        cabList.add(cab5);
     }
 }

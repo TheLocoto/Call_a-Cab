@@ -1,6 +1,21 @@
 package View;
 
+import DataBase.CabDataBase;
+import Utils.ChargeBar;
+
+import java.util.Scanner;
+
 public class CabView {
+
+    Scanner scanner;
+    CabDataBase cabDataBase;
+    ChargeBar chargeBar;
+
+    public CabView(){
+        this.scanner = new Scanner(System.in);
+        this.cabDataBase = new CabDataBase();
+        this.chargeBar=new ChargeBar();
+    }
 
     /**
      * This method shows the information of the taxi.
@@ -20,4 +35,5 @@ public class CabView {
         System.out.println("\t" + "Fuel Level: " + fuelLevel + " Litros");
         System.out.println("\t" + "Availability: " + availability);
     }
+
 }

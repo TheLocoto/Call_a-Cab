@@ -11,9 +11,9 @@ public class CabsCentralController {
     private CabsCentral model;
     private CabsCentralView view;
 
-    public CabsCentralController(CabsCentral model, CabsCentralView view) {
-        this.model = model;
-        this.view = view;
+    public CabsCentralController() {
+        this.model = new CabsCentral();
+        this.view = new CabsCentralView();
     }
 
     public Cab getFreeCabCabsCentral(){
@@ -41,5 +41,18 @@ public class CabsCentralController {
     }
 
     public void showWelcome(){ view.showWelcome();}
+
+    public void generateCabList(){
+        view.insertingCabsMessage();
+        model.generateCabList();
+    }
+
+    public void generateDriversList(){
+        view.insertingDriversMessage();
+        model.generateDriverList();
+    }
+
+
+
 
 }

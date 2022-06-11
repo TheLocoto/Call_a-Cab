@@ -2,48 +2,50 @@ package Controller;
 import Model.Cab;
 import View.CabView;
 
+import java.util.ArrayList;
+
 public class CabController {
 
-    private Cab cab;
-    private CabView cabView;
+    private Cab model;
+    private CabView view;
 
-    public CabController(Cab cab, CabView cabView){
-        this.cab = cab;
-        this.cabView = cabView;
+    public CabController(){
+        this.model = new Cab();
+        this.view = new CabView();
     }
 
     public String getBrand() {
-        return cab.getBrand();
+        return model.getBrand();
     }
 
     public String getModel() {
-        return cab.getModel();
+        return model.getModel();
     }
     public String getLicensePlate() {
-        return cab.getLicensePlate();
+        return model.getLicensePlate();
     }
 
     public int getFuelLevel() {
-        return cab.getFuelLevel();
+        return model.getFuelLevel();
     }
 
     public void setFuelLevel(int fuelLevel) {
-        cab.setFuelLevel(fuelLevel);
+        model.setFuelLevel(fuelLevel);
     }
 
     public void setAvailability(boolean availability) {
-        cab.setAvailability(availability);
+        model.setAvailability(availability);
     }
 
     public boolean getAvailability(){
-        return cab.getAvailability();
+        return model.getAvailability();
     }
 
 
 
     public void showInfoTaxi(){
-
-        cabView.showInfoTaxi(getBrand(), getModel(), getLicensePlate(), getAvailability(), getFuelLevel());
+        view.showInfoTaxi(getBrand(), getModel(), getLicensePlate(), getAvailability(), getFuelLevel());
     }
+
 
 }

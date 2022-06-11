@@ -7,15 +7,24 @@
  */
 package Model;
 
+import DataBase.CabDataBase;
+import DataBase.DriverDataBase;
+
 import java.util.ArrayList;
 
 public class CabsCentral {
     ArrayList<Cab> cabsList;
     ArrayList<Driver> driversList;
 
+    CabDataBase cabDataBase = new CabDataBase();
+    DriverDataBase driverDataBase = new DriverDataBase();
+
     public CabsCentral(ArrayList<Cab> cabsList, ArrayList<Driver> driversList) {
         this.cabsList = cabsList;
         this.driversList = driversList;
+    }
+
+    public CabsCentral(){
     }
 
     private boolean checkCabsAvailability(){
@@ -118,7 +127,23 @@ public class CabsCentral {
         return cabsList;
     }
 
+    public void setCabsList(ArrayList<Cab> cabsList){
+        this.cabsList = cabsList;
+    }
+
     public ArrayList<Driver> getDriversList() {
         return driversList;
+    }
+
+    public void setDriversList(ArrayList<Driver> driversList){ this.driversList=driversList;}
+
+    public void generateCabList(){
+        cabDataBase.generateCabList();
+        setCabsList(cabDataBase.getCabList());
+    }
+
+    public void generateDriverList(){
+        driverDataBase.generateDriverList();
+        setDriversList(driverDataBase.getDriverList());
     }
 }
