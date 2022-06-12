@@ -15,6 +15,7 @@ public class CallACabController {
     }
 
     public void callACabClientApp(){
+        cabsCentralController.showWelcome();
         int opcion = cabsCentralController.getClientMenuFirstView();
         int attemps = 0;
         cabsCentralController.generateLists();
