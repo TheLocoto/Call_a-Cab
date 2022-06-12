@@ -32,9 +32,10 @@ public class DriverDataBase {
         driverList.add(estebanArce);
         driverList.add(marioEscalera);
         driverList.add(andreaMamani);
+        /*
         driverList.add(carlosEscalante);
         driverList.add(jhonCena);
-        /*driverList.add(marioColque);
+        driverList.add(marioColque);
         driverList.add(sergioContreras);
         driverList.add(jimenaRocha);
         driverList.add(gabrielaBerrios);

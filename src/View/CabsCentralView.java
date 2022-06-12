@@ -22,7 +22,7 @@ public class CabsCentralView {
     }
 
     public void showTaxiTripStatusMessage(Cab cab){
-        if(cab!=null && cab.driver!=null) System.out.println("They assigned him a taxi with a license plate "+cab.getLicensePlate()+"\nconducted by "+cab.driver.getName());
+        if(cab!=null && cab.driver!=null) System.out.println("We assigned you a cab with a license plate "+cab.getLicensePlate()+"\nconducted by "+cab.driver.getName());
         else System.out.println("No taxi found please try again later");
     }
 
@@ -48,7 +48,6 @@ public class CabsCentralView {
 
     public int clientMenuSecondView(){
         int opcion;
-        System.out.println("You just arrived at your destination");
         System.out.println("Do you need another taxi?");
         System.out.println("1: Yes");
         System.out.println("2: No");
