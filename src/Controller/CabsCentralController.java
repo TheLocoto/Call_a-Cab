@@ -25,7 +25,6 @@ public class CabsCentralController {
 
     public void showWelcome(){ view.showWelcome();}
 
-    //public Cab verifyAvailableCab() {return model.verifyAvailableCab();}
     public Cab sendCabToClient(TaxiTrip taxiTrip){return model.sendCabToClient(taxiTrip);}
 
     public void showTaxiTripStatusMessage(Cab cab){view.showTaxiTripStatusMessage(cab);}

@@ -32,15 +32,11 @@ public class CallACabController {
         cabsCentralController.generateDriversList();
         while (opcion!=2){
             attemps = taxiTripController.taxiTrip(attemps);
-            //SE PUEDE INSERTAR EL GENERATE LISTS EN ALGUNA FUNCION DEL CABCENTRAL? PARA Q NO SE VEA TAN GRANDE
-            //ESTA PARTE XD
-            //INTENTAR IGUAL REDUCIR ESTA PARTE PARA Q TOOODA ESTA LOGICA ESTE EN UNA SOLA FUNCION COMO EN EL TAXI TRIP
             Cab cabSent = cabsCentralController.sendCabToClient(taxiTripController.getTaxiTrip());
             cabsCentralController.showTaxiTripStatusMessage(cabSent);
-            //Y ARREGLAR LA PARTE DONDE NO RESETEA LOS AUTOS, TENDRIAS QUE RESETEAR DIRECTAMENTE EN LA LISTA DE AUTOS
-            //DEL CAB CENTRAL
-            if(cabSent!=null)carTour.carTour();
-            opcion = cabsCentralController.getClientMenuSecondView();
+
+            //if(cabSent!=null)carTour.carTour();
+            //opcion = cabsCentralController.getClientMenuSecondView();
 
         }
     }
