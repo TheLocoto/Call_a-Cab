@@ -30,7 +30,6 @@ public class CabDataBase {
 
         cabList.add(cab1);
         cabList.add(cab2);
-        /*
         cabList.add(cab3);
         cabList.add(cab4);
         cabList.add(cab5);

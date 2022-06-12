@@ -30,7 +30,7 @@ public class CabsCentral {
 
     public Cab sendCabToClient(TaxiTrip taxiTrip){
         Cab cab = getCabAvailable();
-        Driver driver = getDriverAvailable();
+        Driver driver = getRandomDriverAvailable();
         if(cab!=null&&driver!=null){
             cab.setDriver(driver);
             driver.setAvailability(false);
@@ -55,20 +55,20 @@ public class CabsCentral {
         return cabFound;
     }
 
-    private Driver getDriverAvailable() {
-        Driver driverFound = null;
-        for (Driver driver : driversList) {
-            if (driver.isAvailable()) {
-                driverFound = driver;
-                driverFound.setAvailability(false);
-                break;
-            }
+    public ArrayList<Driver> getDriversAvailableList(){
+        ArrayList<Driver> driversAvailableList = new ArrayList<>();
+        for(Driver driver:driversList){
+            if(driver.isAvailable()) driversAvailableList.add(driver);
         }
-        return driverFound;
+        return driversAvailableList;
     }
 
-    private void assignDriverToCab(Cab cab, Driver driver) {
-        cab.setDriver(driver);
+    private Driver getRandomDriverAvailable() {
+        ArrayList<Driver> driversAvailableList = getDriversAvailableList();
+        Driver driver = null;
+        if(driversAvailableList.size()!=0)
+            driver = driversAvailableList.get((int) (Math.random() * driversAvailableList.size()));
+        return driver;
     }
 
     private void setFreeAnyBusyCab() {

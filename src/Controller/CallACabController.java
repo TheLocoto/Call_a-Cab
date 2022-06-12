@@ -1,14 +1,7 @@
 package Controller;
 
-
-import DataBase.TaxiTripDataBase;
 import Model.Cab;
-import Model.TaxiTrip;
 import Utils.CarTour;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class CallACabController {
 
     private TaxiTripController taxiTripController;
@@ -34,9 +27,8 @@ public class CallACabController {
             attemps = taxiTripController.taxiTrip(attemps);
             Cab cabSent = cabsCentralController.sendCabToClient(taxiTripController.getTaxiTrip());
             cabsCentralController.showTaxiTripStatusMessage(cabSent);
-
-            //if(cabSent!=null)carTour.carTour();
-            //opcion = cabsCentralController.getClientMenuSecondView();
+            if(cabSent!=null)carTour.carTour();
+            opcion = cabsCentralController.getClientMenuSecondView();
 
         }
     }
