@@ -34,13 +34,13 @@ public class CabsCentralView {
         }
     }
 
-    public void insertingCabsMessage(){
+    public void assigningTaxiMessage(){
         System.out.println("Assigning you a taxi and driver");
         chargeBar.chargeBar();
         System.out.println("Finish");
     }
 
-    public void insertingDriversMessage(){
+    public void confirmShipmentMessage(){
         System.out.println("Confirming the shipment of your taxi trip");
         chargeBar.chargeBar();
         System.out.println("Finish");

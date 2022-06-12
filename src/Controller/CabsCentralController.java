@@ -36,13 +36,13 @@ public class CabsCentralController {
         return view.clientMenuFirstView();
     }
 
-    public void generateCabList(){
-        view.insertingCabsMessage();
+    public void generateLists(){
         model.generateCabList();
+        model.generateDriverList();
     }
 
-    public void generateDriversList(){
-        view.insertingDriversMessage();
-        model.generateDriverList();
+    public void generateChargeBarMessage(){
+        view.confirmShipmentMessage();
+        view.assigningTaxiMessage();
     }
 }

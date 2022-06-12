@@ -1,6 +1,6 @@
 import Controller.CallACabController;
 
-public class mainEXAMPLE {
+public class main {
 
     public static void main(String arg[]){
 
