@@ -30,11 +30,12 @@ public class DriverDataBase {
         Driver mateoEscalera = new Driver("Mateo Escalera", 44569785, 6521445, 45, false);
 
         driverList.add(estebanArce);
+        /*
         driverList.add(marioEscalera);
         driverList.add(andreaMamani);
         driverList.add(carlosEscalante);
         driverList.add(jhonCena);
-        /*driverList.add(marioColque);
+        driverList.add(marioColque);
         driverList.add(sergioContreras);
         driverList.add(jimenaRocha);
         driverList.add(gabrielaBerrios);

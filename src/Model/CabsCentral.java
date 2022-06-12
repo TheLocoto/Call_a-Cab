@@ -119,8 +119,7 @@ public class CabsCentral {
         Cab cab = verifyAvailableCab();
         if (cab != null && cab.driver!=null) {
             cab.addTaxiTrip(taxiTrip);
-            //imprimir datos del cab y driver
-        }else setFreeAnyBusyCab();//imprimir lo sentimos intente de nuevo
+        }else setFreeAnyBusyCab();
         return cab;
     }
 
