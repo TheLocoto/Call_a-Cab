@@ -120,6 +120,8 @@ public class TaxiTripController {
         return model;
     }
 
+    public void setModel(TaxiTrip taxiTrip) { model = taxiTrip;}
+
     public int taxiTrip(int attemps){
         if (attemps==0) {
             createTaxiTrip();

@@ -26,5 +26,6 @@ public class CallACabController {
             if(cabSent!=null)carTour.carTour();
             opcion = cabsCentralController.getClientMenuSecondView();
         }
+        cabsCentralController.showRecordList();
     }
 }

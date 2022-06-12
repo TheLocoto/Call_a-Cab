@@ -1,6 +1,7 @@
 package View;
 import Model.Cab;
 import Model.Driver;
+import Model.TaxiTrip;
 import Utils.ChargeBar;
 
 import java.util.ArrayList;
@@ -62,6 +63,16 @@ public class CabsCentralView {
         System.out.println("2: No");
         opcion = input.nextInt();
         return  opcion;
+    }
+
+    public void showRecordList(ArrayList<TaxiTrip> taxiTripsRecord,ArrayList<Driver> DriverRecord,
+                               ArrayList<Cab> cabRecord){
+        for (int i=0;i<taxiTripsRecord.size();i++){
+            System.out.println("The trip with destiny " + taxiTripsRecord.get(i).getDestiny() + " address " +
+                    taxiTripsRecord.get(i).getAddress() + "\nand a cost of " + taxiTripsRecord.get(i).getCost() +
+                    "\nwas given by " + DriverRecord.get(i).getName() + " in a license plate car " +
+                    cabRecord.get(i).getLicensePlate());
+        }
     }
 
 }

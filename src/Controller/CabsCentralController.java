@@ -36,6 +36,14 @@ public class CabsCentralController {
         return view.clientMenuFirstView();
     }
 
+    public ArrayList<TaxiTrip> getTaxiTripsRecordModel(){return model.getTaxiTripsRecord();}
+
+    public ArrayList<Cab> getCabRecordModel(){return model.getCabRecord();}
+
+    public ArrayList<Driver> getDriverRecordModel(){return model.getDriverRecord();}
+
+    public void showRecordList(){view.showRecordList(getTaxiTripsRecordModel(),getDriverRecordModel(),getCabRecordModel());}
+
     public void generateLists(){
         model.generateCabList();
         model.generateDriverList();
@@ -45,4 +53,5 @@ public class CabsCentralController {
         view.confirmShipmentMessage();
         view.assigningTaxiMessage();
     }
+
 }

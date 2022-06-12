@@ -14,18 +14,28 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class CabsCentral {
-    ArrayList<Cab> cabsList;
-    ArrayList<Driver> driversList;
+    private ArrayList<Cab> cabsList;
+    private ArrayList<Driver> driversList;
 
-    CabDataBase cabDataBase = new CabDataBase();
-    DriverDataBase driverDataBase = new DriverDataBase();
+    private ArrayList<Driver> driverRecord;
+    private ArrayList<Cab> cabRecord;
+    private ArrayList<TaxiTrip> taxiTripsRecord;
+
+    private CabDataBase cabDataBase = new CabDataBase();
+    private DriverDataBase driverDataBase = new DriverDataBase();
 
     public CabsCentral(ArrayList<Cab> cabsList, ArrayList<Driver> driversList) {
         this.cabsList = cabsList;
         this.driversList = driversList;
+        this.taxiTripsRecord = new ArrayList<>();
+        this.cabRecord = new ArrayList<>();
+        this.driverRecord = new ArrayList<>();
     }
 
     public CabsCentral(){
+        this.taxiTripsRecord = new ArrayList<>();
+        this.cabRecord = new ArrayList<>();
+        this.driverRecord = new ArrayList<>();
     }
 
     public Cab sendCabToClient(TaxiTrip taxiTrip){
@@ -36,6 +46,10 @@ public class CabsCentral {
             driver.setAvailability(false);
             cab.setAvailability(false);
             cab.addTaxiTrip(taxiTrip);
+
+            addTaxiTripRecord(taxiTrip);
+            addCabInCabRecord(cab);
+            addDriverInDriverRecord(driver);
         }else {
             setFreeAnyBusyCab();
             cab = null;
@@ -101,4 +115,36 @@ public class CabsCentral {
         driverDataBase.generateDriverList();
         setDriversList(driverDataBase.getDriverList());
     }
+
+
+    public ArrayList<Driver> getDriverRecord() {
+        return driverRecord;
+    }
+
+    public void setDriverRecord(ArrayList<Driver> driverRecord) {
+        this.driverRecord = driverRecord;
+    }
+
+    public ArrayList<Cab> getCabRecord() {
+        return cabRecord;
+    }
+
+    public void setCabRecord(ArrayList<Cab> cabRecord) {
+        this.cabRecord = cabRecord;
+    }
+
+    public ArrayList<TaxiTrip> getTaxiTripsRecord() {
+        return taxiTripsRecord;
+    }
+
+    public void setTaxiTripsRecord(ArrayList<TaxiTrip> taxiTripsRecord) {
+        this.taxiTripsRecord = taxiTripsRecord;
+    }
+
+    public void addDriverInDriverRecord(Driver driver){driverRecord.add(driver);}
+
+    public void addCabInCabRecord(Cab cab){cabRecord.add(cab);}
+
+    public void addTaxiTripRecord(TaxiTrip taxiTrip){taxiTripsRecord.add(taxiTrip);}
+
 }
