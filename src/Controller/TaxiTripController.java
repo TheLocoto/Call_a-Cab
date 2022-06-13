@@ -7,6 +7,7 @@ import View.TaxiTripView;
  * This class contains necessary data of a taxi trip controller.
  * Takes care of declaring, initializing, saving its values and
  * being able to obtain them or setting all its cab attributes
+ *
  * @author The Negasonic Teenage Workhead.
  */
 public class TaxiTripController {
@@ -31,6 +32,7 @@ public class TaxiTripController {
 
     /**
      * This method is used only to return the taxi trip cost.
+     *
      * @return the cost of taxi trip model.
      */
     public int getTaxiTripCost(){
@@ -39,6 +41,7 @@ public class TaxiTripController {
 
     /**
      * This method is used for to set the number of passengers in a taxi trip.
+     *
      * @param passengers the new number of passengers into a taxi trip.
      */
     public void setTaxiTripPassengers(int passengers){
@@ -47,6 +50,7 @@ public class TaxiTripController {
 
     /**
      * This method is used only to return the number of passengers into a taxi trip.
+     *
      * @return the number os passengers into taxi trip model.
      */
     public int getTaxiTripPassengers(){
@@ -55,6 +59,7 @@ public class TaxiTripController {
 
     /**
      * This method is used for to set the destiny of a taxi trip.
+     *
      * @param destiny the new destiny of a taxi trip.
      */
     public void setTaxiTripDestiny(String destiny){
@@ -63,6 +68,7 @@ public class TaxiTripController {
 
     /**
      * This method is used only to return the destiny of a taxi trip.
+     *
      * @return the destiny of taxi trip model.
      */
     public String getTaxiTripDestiny(){
@@ -71,6 +77,7 @@ public class TaxiTripController {
 
     /**
      * This method is used for to set the address of a taxi trip.
+     *
      * @param address the new address of a taxi trip.
      */
     public void setTaxiTripAddress(String address){
@@ -79,6 +86,7 @@ public class TaxiTripController {
 
     /**
      * this method is used only to return the address of a taxi trip
+     *
      * @return the address of taxi trip model.
      */
     public String getTaxiTripAddress(){
@@ -121,27 +129,28 @@ public class TaxiTripController {
     }
 
     /**
-     * this method is used to show the options menu to the user so that he can choose one
+     * This method is used to show the options menu to the user so that he can choose one
      * the method creates a loop until the user is satisfied with the data.
      */
     public void confirmTaxiTrip(){
         informationAboutTaxiTrip();
-        int opcion = view.menuTaxiTripMessage();
-        while(opcion!=1) {
-            incorrectDates(opcion);
-            incorrectPrice(opcion);
-            incorrectAnswer(opcion);
-            opcion = view.menuTaxiTripMessage();
+        int option = view.menuTaxiTripMessage();
+        while(option!=1) {
+            incorrectDates(option);
+            incorrectPrice(option);
+            incorrectAnswer(option);
+            option = view.menuTaxiTripMessage();
         }
         view.finishMessage();
     }
 
     /**
      * This method is used when the user wants to enter his data again
-     * @param opcion the option that the user previously chose
+     *
+     * @param option the option that the user previously chose
      */
-    public void incorrectDates(int opcion){
-        if (opcion==3){
+    public void incorrectDates(int option){
+        if (option==3){
             requestTaxiTripAgain();
             informationAboutTaxiTrip();
         }
@@ -149,10 +158,11 @@ public class TaxiTripController {
 
     /**
      * This method is used when the user wants the cost to be different
-     * @param opcion the option that the user previously chose
+     *
+     * @param option the option that the user previously chose
      */
-    public void incorrectPrice(int opcion){
-        if (opcion==2){
+    public void incorrectPrice(int option){
+        if (option==2){
             setTaxiTripCost();
             informationAboutTaxiTrip();
         }
@@ -160,16 +170,17 @@ public class TaxiTripController {
 
     /**
      * This method is used when the user enters a non-existent option
-     * @param opcion the option that the user previously chose
+     *
+     * @param option the option that the user previously chose
      */
-    public void incorrectAnswer(int opcion){
-        if (opcion > 3){
+    public void incorrectAnswer(int option){
+        if (option > 3){
             view.incorrectAnswer();
         }
     }
 
     /**
-     * this method is used to create the taxi trip
+     * This method is used to create the taxi trip
      * makes use of requestTaxiTrip and confirmTaxiTrip
      */
     public void createTaxiTrip(){
@@ -188,6 +199,7 @@ public class TaxiTripController {
 
     /**
      * This method is used to obtain the taxi trip once it has been updated
+     *
      * @return the taxi trip model.
      */
     public TaxiTrip getTaxiTrip(){
@@ -196,28 +208,30 @@ public class TaxiTripController {
 
     /**
      * This method is used to update or modify the taxi trip model
+     *
      * @param taxiTrip the new taxi trip model
      */
     public void setModel(TaxiTrip taxiTrip) { model = taxiTrip;}
 
     /**
-     * In this method we summarize all the controller of the taxi trip
+     * This method we summarize all the controller of the taxi trip
      * We ask for a number that must be equal to 0 in order to create a taxi trip for the first time.
      * Once the counter is created, it will be increased to 1. If the counter is greater than one,
      * it means that the user has already requested a taxi more than once. taxi trip and makes use of the
      * reset scanner to avoid conflicts.
-     * @param attemps the number of taxi trips created
+     *
+     * @param requests the number of taxi trips created
      * @return the new number of taxi trips created
      */
-    public int taxiTrip(int attemps){
-        if (attemps==0) {
+    public int taxiTrip(int requests){
+        if (requests==0) {
             createTaxiTrip();
-            attemps++;
+            requests++;
         }
         else{
             createMoreTaxiTrips();
         }
-        return attemps;
+        return requests;
     }
 
 }

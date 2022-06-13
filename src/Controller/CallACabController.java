@@ -32,16 +32,16 @@ public class CallACabController {
      */
     public void callACabClientApp(){
         cabsCentralController.showWelcome();
-        int opcion = cabsCentralController.getClientMenuFirstView();
-        int attemps = 0;
+        int option = cabsCentralController.getClientMenuFirstView();
+        int requests = 0;
         cabsCentralController.generateLists();
-        while (opcion!=2){
-            attemps = taxiTripController.taxiTrip(attemps);
+        while (option!=2){
+            requests = taxiTripController.taxiTrip(requests);
             cabsCentralController.generateChargeBarMessage();
             Cab cabSent = cabsCentralController.sendCabToClient(taxiTripController.getTaxiTrip());
             cabsCentralController.showTaxiTripStatusMessage(cabSent);
             if(cabSent!=null)carTour.carTour();
-            opcion = cabsCentralController.getClientMenuSecondView();
+            option = cabsCentralController.getClientMenuSecondView();
         }
         cabsCentralController.showRecordList();
     }

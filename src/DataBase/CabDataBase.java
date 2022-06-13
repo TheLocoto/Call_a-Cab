@@ -8,7 +8,7 @@ public class CabDataBase {
     private ArrayList<Cab> cabList;
 
     /**
-     * This method is only for creat a new list with cabList attribute.
+     * This method is only for create a new list with cabList attribute.
      */
     public CabDataBase(){
         this.cabList = new ArrayList<>();
@@ -37,13 +37,13 @@ public class CabDataBase {
      * Each object sends different arguments and simulates a database in real life.
      */
     public void generateCabList(){
-        Cab cab1 = new Cab("Toyota Corona", "94", "5323GFK", 30, true);
-        Cab cab2 = new Cab("Toyota Corona", "80", "7453DFN", 50, true);
-        Cab cab3 = new Cab("Toyota Corona", "95", "4363DFB", 20, true);
-        Cab cab4 = new Cab("Toyota Corona", "86", "2352HFG", 10, true);
-        Cab cab5 = new Cab("Toyota Corona", "20", "3634NGD", 30, true);
-        Cab cab6 = new Cab("Toyota Corona", "26", "6342ASD", 30, true);
-        Cab cab7 = new Cab("Toyota Corona", "01", "9634OPA", 30, true);
+        Cab cab1 = new Cab("Toyota Corona", "94", "5323GFK",true);
+        Cab cab2 = new Cab("Suzuki Swift", "80", "7453DFN",true);
+        Cab cab3 = new Cab("Tesla", "S", "4363DFB",true);
+        Cab cab4 = new Cab("Toyota Corona", "86", "2352HFG",true);
+        Cab cab5 = new Cab("Suzuki Swift", "20", "3634NGD",true);
+        Cab cab6 = new Cab("Quantum", "23", "6342ASD",true);
+        Cab cab7 = new Cab("Toyota Corona", "01", "9634OPA",true);
 
         cabList.add(cab1);
         cabList.add(cab2);

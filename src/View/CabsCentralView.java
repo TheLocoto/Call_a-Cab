@@ -47,14 +47,6 @@ public class CabsCentralView {
         System.out.println(Color.GREEN.color+"=====================================");
     }
 
-    public void assignCabToClient(){}
-
-    public void showDriversList(ArrayList<Driver> driversList){
-        for (Driver driver:driversList){
-            System.out.println(driver.toString());
-        }
-    }
-
     /**
      * This method shows the animation when it is assigning a cab and a driver to any client.
      */

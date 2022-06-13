@@ -5,7 +5,7 @@ package Model;
  * Takes care of declaring, initializing, saving its values and
  * being able to obtain them or setting all its Driver attributes.
  *
- * @autor The Negasonic Teenage Warhead .
+ * @author The Negasonic Teenage Warhead .
  */
 public class Driver {
     private String name;

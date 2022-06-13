@@ -18,6 +18,7 @@ public enum Color {
     /**
      * The color constructor
      * Initialize the color
+     *
      * @param color the color of some data inside the enum
      */
     Color(String color){

@@ -57,13 +57,5 @@ public class DriverDataBase {
         return driverList;
     }
 
-    /**
-     * This set method is used for assign a driverList argument to this driverList parameter.
-     *
-     * @param driverList the drivers list with or not availability.
-     */
-    public void setDriverList(ArrayList<Driver> driverList) {
-        this.driverList = driverList;
-    }
 }
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Takes care of declaring, initializing, saving its values and
  * being able to obtain them or setting all its cab attributes.
  *
- * @autor The Negasonic Teenage Warhead .
+ * @author The Negasonic Teenage Warhead .
  */
 public class Cab {
 
@@ -18,7 +18,6 @@ public class Cab {
     private String model;
     private String licensePlate;
     private boolean availability;
-    private int fuelLevel;
     private CabDataBase cabDataBase;
 
     /**
@@ -29,15 +28,13 @@ public class Cab {
      * @param brand         the name of the cab brand.
      * @param model         the name of the cab model.
      * @param licensePlate  the license Plate of the car.
-     * @param fuelLevel     the fuel Level of the Cab.
      * @param availability  the state of accessibility the cab, if the cab is available,
      *                      can be assigned to a customer, otherwise no.
      */
-    public Cab(String brand, String model, String licensePlate, int fuelLevel, boolean availability){
+    public Cab(String brand, String model, String licensePlate,boolean availability){
         this.brand = brand;
         this.model = model;
         this.licensePlate = licensePlate;
-        this.fuelLevel = fuelLevel;
         this.availability = availability;
         this.cabDataBase = new CabDataBase();
         this.driver = null;
@@ -78,25 +75,6 @@ public class Cab {
     }
 
     /**
-     * This method returns the fuel level of the cab.
-     *
-     * @return  the fuel level of the cab.
-     */
-    public int getFuelLevel() {
-        return fuelLevel;
-    }
-
-    /**
-     * This set method is used for to set or change fuel level of the cab.
-     *
-     * @param fuelLevel the fuel Level of the Cab. If the fue level is zero,
-     *                  the cab will not be available, otherwise yes.
-     */
-    public void setFuelLevel(int fuelLevel) {
-        this.fuelLevel = fuelLevel;
-    }
-
-    /**
      * This method returns if the cab is available or not with a boolean value.
      *
      * @return the availability attribute of the cab.
@@ -124,11 +102,6 @@ public class Cab {
      */
     public void setDriver(Driver driver){
         this.driver = driver;
-    }
-
-
-    public void resetDriver(){
-        this.driver=null;
     }
 
     /**

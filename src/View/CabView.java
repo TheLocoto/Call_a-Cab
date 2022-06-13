@@ -9,7 +9,7 @@ import java.util.Scanner;
  * This class contains the methods to display the data of the Cab class.
  * Cab class is inside the Model package
  *
- * @autor The Negasonic Teenage Warhead
+ * @author The Negasonic Teenage Warhead
  */
 public class CabView {
 
@@ -31,14 +31,12 @@ public class CabView {
      * @param brand        this is the name of the car.
      * @param model        this is the model of the car.
      * @param licensePlate this is the license Plate of the car.
-     * @param fuelLevel    this is the fuel Level of the Car.
      * @param availability indicates the status of the taxi.
      */
-    public void showInfoTaxi(String brand, String model, String licensePlate, boolean availability, int fuelLevel) {
+    public void showInfoTaxi(String brand, String model, String licensePlate, boolean availability) {
         System.out.println("\n" + "\t" + "Brand: " + brand);
         System.out.println("\t" + "Model: " + model);
         System.out.println("\t" + "License Plate: " + licensePlate);
-        System.out.println("\t" + "Fuel Level: " + fuelLevel + " Litros");
         System.out.println("\t" + "Availability: " + availability);
     }
 

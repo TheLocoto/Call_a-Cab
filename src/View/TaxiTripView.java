@@ -9,6 +9,7 @@ import java.util.Scanner;
  * This class contains necessary data of a taxi trip view.
  * Takes care of declaring, initializing, saving its values and
  * being able to obtain them.
+ *
  * @author The Negasonic Teenage Warhead.
  */
 public class TaxiTripView {
@@ -34,6 +35,7 @@ public class TaxiTripView {
     /**
      * This method is used to request the address of the user
      * makes use of the scanner so that the user can insert their data.
+     *
      * @return the address of the user
      */
     public String enterAddressMessage(){
@@ -45,6 +47,7 @@ public class TaxiTripView {
     /**
      * This method is used to request the destiny of the user
      * makes use of the scanner so that the user can insert their data
+     *
      * @return the destiny of the user
      */
     public String enterDestinyMessage(){
@@ -56,6 +59,7 @@ public class TaxiTripView {
     /**
      * This method is used to request the number of passengers of the user
      * makes use of the scanner so that the user can insert their data
+     *
      * @return the number of passengers of the user
      */
     public int enterPassengersMessage(){
@@ -67,6 +71,7 @@ public class TaxiTripView {
 
     /**
      * This method is used to print on screen the details of the taxi trip
+     *
      * @param destiny the destiny of the user
      * @param address the address of the user
      * @param passengers the number of passengers
@@ -83,6 +88,7 @@ public class TaxiTripView {
     /**
      * This method is used to reset the scanner
      * We create us because sometimes the scanner did not work.
+     *
      * @return a reset of scanner
      */
     public String requestTaxiTripAgain(){
@@ -93,6 +99,7 @@ public class TaxiTripView {
     /**
      * This method is used to show the user a menu of option to verify their data
      * make use of the scanner so that the user can insert the required option.
+     *
      * @return the option the user chose.
      */
     public int menuTaxiTripMessage(){

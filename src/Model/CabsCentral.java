@@ -21,7 +21,7 @@ import java.util.Map;
  * All lists save objects of a specific class type.
  * With this we manage more easily
  *
- * @autor The Negasonic Teenage Warhead
+ * @author The Negasonic Teenage Warhead
  */
 public class CabsCentral {
     private ArrayList<Cab> cabsList;
@@ -153,7 +153,7 @@ public class CabsCentral {
             if(!cab.getAvailability()&&cab.driver!=null){
                 cab.setAvailability(true);
                 cab.driver.setAvailability(true);
-                cab.driver=null;////
+                cab.driver=null;
                 break;
             }
         }
@@ -209,10 +209,6 @@ public class CabsCentral {
         return driverRecord;
     }
 
-    public void setDriverRecord(ArrayList<Driver> driverRecord) {
-        this.driverRecord = driverRecord;
-    }
-
     /**
      * This method returns the cab record or history.
      *
@@ -220,10 +216,6 @@ public class CabsCentral {
      */
     public ArrayList<Cab> getCabRecord() {
         return cabRecord;
-    }
-
-    public void setCabRecord(ArrayList<Cab> cabRecord) {
-        this.cabRecord = cabRecord;
     }
 
     /**
@@ -234,10 +226,6 @@ public class CabsCentral {
      */
     public ArrayList<TaxiTrip> getTaxiTripsRecord() {
         return taxiTripsRecord;
-    }
-
-    public void setTaxiTripsRecord(ArrayList<TaxiTrip> taxiTripsRecord) {
-        this.taxiTripsRecord = taxiTripsRecord;
     }
 
     /**

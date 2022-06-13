@@ -3,7 +3,7 @@ package View;
 /**
  * This class is only show the driver data.
  *
- * @autor The Negasonic Teenage Warhead
+ * @author The Negasonic Teenage Warhead
  */
 public class DriverView {
     public void printDriverView(String name, int ci, int phone, int age)

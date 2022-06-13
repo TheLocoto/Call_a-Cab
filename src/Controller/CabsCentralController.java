@@ -26,27 +26,13 @@ public class CabsCentralController {
     }
 
     /**
-     * This method get the view of cabsCentralView and return it.
-     * @return the view of cabsCentralView.
-     */
-    public CabsCentralView getView(){return view;}
-
-
-    /**
-     * This method get the driver list from cabsCentral.
-     * @return the driver list from cabsCentral.
-     */
-    public ArrayList<Driver> getDriversListCabsCentral() {
-        return model.getDriversList();
-    }
-
-    /**
      * This method shows the welcome of cabsCentralView.
      */
     public void showWelcome(){ view.showWelcome();}
 
     /**
      * This method communicates the model logic to send a cab to a client with the user.
+     *
      * @param taxiTrip taxi trip that is requested.
      * @return the cab that will be sent.
      */
