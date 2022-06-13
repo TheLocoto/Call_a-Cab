@@ -1,15 +1,15 @@
-/**
- * This class centralizes all classes used in the offer of cab service.
- *
- * This class manipulates our cabs and drivers list in real life and has logic to assign a cab to a user that need it.
- *
- */
 package Model;
 
 import DataBase.CabDataBase;
 import DataBase.DriverDataBase;
 import java.util.ArrayList;
 
+/**
+ *This class centralizes all classes used in the offer of cab service.
+ *This class manipulates our cabs and drivers list in real life and has logic to assign a cab to a user that needs it.
+ *
+ * @author The Negasonic Teenage Warhead
+ */
 public class CabsCentral {
     private ArrayList<Cab> cabsList;
     private ArrayList<Driver> driversList;
@@ -19,6 +19,9 @@ public class CabsCentral {
     private CabDataBase cabDataBase = new CabDataBase();
     private DriverDataBase driverDataBase = new DriverDataBase();
 
+    /**
+     * This constructor of cabs central, initializes de list of objects that will be used to store the historic data.
+     */
     public CabsCentral(){
         this.taxiTripsRecord = new ArrayList<>();
         this.cabRecord = new ArrayList<>();
