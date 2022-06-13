@@ -5,6 +5,12 @@ import Utils.ChargeBar;
 
 import java.util.Scanner;
 
+/**
+ * This class contains the methods to display the data of the Cab class.
+ * Cab class is inside the Model package
+ *
+ * @autor The Negasonic Teenage Warhead
+ */
 public class CabView {
 
     Scanner scanner;
