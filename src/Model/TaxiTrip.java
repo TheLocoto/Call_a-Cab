@@ -1,21 +1,28 @@
 package Model;
 
+
 /**
- * Taxi Trip class
- * In this class we create a trip for a taxi
+ * This class contains the necessary data of a taxi trip/ cab trip.
+ * Takes care of declaring, initializing, saving its values and
+ * being able to obtain them or setting all its TaxiTrip attributes.
+ *
+ * @autor The Negasonic Teenage Warhead .
  */
 public class TaxiTrip {
 
     private int cost, passenger;
     private String address,destiny;
 
+
     /**
-     * TaxiTrip first constructor
-     * We use this TaxiTrip constructor when we dont need ask the client information
-     * @param passenger the number of passengers
-     * @param address the first client localitation
-     * @param destiny the ultimate client localitation
-     * @param cost the cost of the trip
+     * This method constructor is used for initialize the attributes in base the arguments received.
+     * the passenger, address and destiny attributes are initialized based on the arguments
+     * received in the parameters.
+     *
+     * @param passenger     the number of passengers
+     * @param address       the first client localization.
+     * @param destiny       the ultimate client localization.
+     * @param cost          the cost of the trip.
      */
     public TaxiTrip(int passenger, String address, String destiny, int cost) {
         this.passenger = passenger;
@@ -24,25 +31,24 @@ public class TaxiTrip {
     }
 
     /**
-     * TaxiTrip second constructor
-     * We use this taxiTrip constructor when we need ask the client information first
+     * this method is the second constructor.
+     * We use this taxiTrip constructor when we need ask the client information first.
      */
     public TaxiTrip(){
     }
 
     /**
-     * getCost method
-     * this method return the cost of the trip
-     * @return cost of the trip
+     * This method returns the cost of the trip.
+     *
+     * @return  the trip/travel cost.
      */
     public int getCost() {
         return cost;
     }
 
     /**
-     * setCost method
-     * This method create a random cost for the trips
-     * This is because the taxis ever give us a random cost
+     * This set method is used for to put a random number for the cost of the trip.
+     * This is because the taxis ever give us a random cost.
      */
     public void setCost() {
         int randomCost = (int)Math.floor(Math.random() * (70 - 10 + 1 )+10);
@@ -50,55 +56,54 @@ public class TaxiTrip {
     }
 
     /**
-     * getPassenger method
-     * This method give us the number of passengers in a trip
-     * @return passengers  number
+     * This method returns the number passenger of the trip.
+     *
+     * @return  the passenger number by trip.
      */
     public int getPassenger() {
         return passenger;
     }
 
     /**
-     * setPassenger method
-     * This method change the number of passengers
-     * @param passenger the number of passengers
+     * This set method is used for to change the number of passenger.
+     *
+     * @param passenger the number of passenger.
      */
     public void setPassenger(int passenger) {
         this.passenger = passenger;
     }
 
-
     /**
-     * getAddress method
-     * This method give us the address of the client
-     * @return address
+     * This method returns the address passenger.
+     *
+     * @return  the address passenger. Is useful for know his location.
      */
     public String getAddress() {
         return address;
     }
 
     /**
-     * setAddress method
-     * this method change the address of the client
-     * @param address of the client
+     * This set method is used for to change the address of the passenger.
+     *
+     * @param address the address of passenger.
      */
     public void setAddress(String address) {
         this.address = address;
     }
 
     /**
-     *getDestiny method
-     * This method give us the destiny of the client
-     * @return destiny
+     * This method returns the destiny of the passenger.
+     *
+     * @return  the destiny of the passenger.
      */
     public String getDestiny() {
         return destiny;
     }
 
     /**
-     * setDestiny method
-     * This method change the destiny of the client
-     * @param destiny of the client
+     * This set method is used for to change the destiny of the passenger.
+     *
+     * @param destiny the destiny of passenger.
      */
     public void setDestiny(String destiny) {
         this.destiny = destiny;

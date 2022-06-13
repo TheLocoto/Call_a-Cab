@@ -1,8 +1,11 @@
 package Model;
 
 /**
- * This mani class Driver uses for management thing like tha data drivers
- * and also for assign driver to one client.
+ * This class contains necessary data of a Driver.
+ * Takes care of declaring, initializing, saving its values and
+ * being able to obtain them or setting all its Driver attributes.
+ *
+ * @autor The Negasonic Teenage Warhead .
  */
 public class Driver {
     private String name;
@@ -13,13 +16,14 @@ public class Driver {
 
 
     /**
-     * This class constructor Driver is uses for initialize attributes name,ci,phone
-     * age and availability, assigned it for the different objects.
-     * @param name is for identify the subject for his name.
-     * @param ci is for identify the subject.
-     * @param phone is for call it and assign to client.
-     * @param age is for know if is grown-up and can drive.
-     * @param availability id for know if it's busy or no.
+     * This method constructor is used for initialize the attributes in base the parameters.
+     * All attributes are initialized based on the arguments received in the parameters.
+     *
+     * @param name          the name of driver.
+     * @param ci            the ci of driver.
+     * @param phone         the number phone of driver.
+     * @param age           the age of driver.
+     * @param availability  the current availability of driver.
      */
     public Driver(String name, int ci, int phone, int age, boolean availability) {
         this.name = name;
@@ -30,31 +34,35 @@ public class Driver {
     }
 
     /**
-     * This method getName is for know his name driver.
-     * @return  name
+     * This method is used to know the driver's name.
+     *
+     * @return  the name of driver.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * This method setName is for put his name driver.
-     * @param name
+     * This set method is used for to set the name of driver.
+     *
+     * @param name the name of driver. Is useful to identify it.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * This method getCi is for know his ci driver.
-     * @return  ci
+     * This method is to get the ci number of driver.
+     *
+     * @return  the ci of driver.
      */
     public int getCi() {
         return ci;
     }
 
     /**
-     * This method setCi is for put his ci driver.
+     * This set method is used for to set the ci of driver.
+     *
      * @param  ci
      */
     public void setCi(int ci) {
@@ -63,14 +71,16 @@ public class Driver {
 
     /**
      * This method getPhone is for know his phone driver.
-     * @return  phone
+     *
+     * @return  the number phone of driver.
      */
     public int getPhone() {
         return phone;
     }
 
     /**
-     * This method setPhone is for put his phone driver.
+     * This set method is used for to set or change the number of driver.
+     *
      * @param  phone
      */
     public void setPhone(int phone) {
@@ -79,14 +89,16 @@ public class Driver {
 
     /**
      * This method getAge is for know his age driver.
-     * @return  age
+     *
+     * @return  the oge of driver.
      */
     public int getAge() {
         return age;
     }
 
     /**
-     * This method setAge is for put his age driver.
+     * This set method is used for to set or change the age of driver.
+     *
      * @param   age
      */
     public void setAge(int age) {
@@ -94,16 +106,18 @@ public class Driver {
     }
 
     /**
-     * This method isAvailable is for know if it's availability or no the driver.
-     * @return  availability
+     * This method isAvailable is for know if it's availability or not the driver.
+     *
+     * @return  the current availability of driver.
      */
     public boolean isAvailable() {
         return availability;
     }
 
     /**
-     * This method setAvailability is for put if it's availability or no the driver.
-     * @@param availability
+     * This set method is used for to set the current availability of driver.
+     *
+     * @param availability
      */
     public void setAvailability(boolean availability) {
         this.availability = availability;
