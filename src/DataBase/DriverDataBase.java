@@ -1,22 +1,28 @@
 package DataBase;
 
 import Model.Driver;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is for only instance objects of class Driver
- * also for can use it in main
+ * This class is for instantiating and storing Driver objects in a list.
+ * Each object sends different arguments and simulates a database in real life.
  */
 public class DriverDataBase {
 
     private ArrayList<Driver> driverList;
 
+    /**
+     * This method is only for create a drivers List.
+     */
     public DriverDataBase(){
         this.driverList = new ArrayList<>();
     }
 
+    /**
+     * This method is for instantiating and storing Driver objects in a list.
+     * Each object sends different arguments and simulates a database in real life.
+     */
     public void generateDriverList() {
         Driver estebanArce = new Driver("Esteban Arce", 45215257, 7584589, 25, true);
         Driver marioEscalera = new Driver("Mario Escalera", 46521578, 6895475, 28, true);
@@ -42,10 +48,20 @@ public class DriverDataBase {
         driverList.add(mateoEscalera);*/
     }
 
+    /**
+     * This method is used only to return the cab model name.
+     *
+     * @return  the value of the taxi model name.
+     */
     public ArrayList<Driver> getDriverList() {
         return driverList;
     }
 
+    /**
+     * This set method is used for assign a driverList argument to this driverList parameter.
+     *
+     * @param driverList the drivers list with or not availability.
+     */
     public void setDriverList(ArrayList<Driver> driverList) {
         this.driverList = driverList;
     }

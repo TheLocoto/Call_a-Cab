@@ -5,9 +5,10 @@ import java.util.ArrayList;
 
 /**
  * This class contains necessary data of a taxi.
+ * Takes care of declaring, initializing, saving its values and
+ * being able to obtain them or setting all its cab attributes.
  *
- * @autor Group.
- *
+ * @autor The Negasonic Teenage Warhead .
  */
 public class Cab {
 
@@ -21,16 +22,16 @@ public class Cab {
     private CabDataBase cabDataBase;
 
     /**
-     * This is the constructor method of the Cab class.
-     *
+     * This constructor method of Cab, initialize the attributes in base to all parameters.
      * Initializes the driver but makes it null, because we will assign a driver to it in another class.
      * Initializes a list of taxi trips, they are the trips that the taxi completes.
      *
-     * @param brand this is the name of the car.
-     * @param model this is the model of the car.
-     * @param licensePlate this is the license Plate of the car.
-     * @param fuelLevel this is the fuel Level of the Car.
-     * @param availability indicates the status of the taxi.
+     * @param brand         the name of the cab brand.
+     * @param model         the name of the cab model.
+     * @param licensePlate  the license Plate of the car.
+     * @param fuelLevel     the fuel Level of the Cab.
+     * @param availability  the state of accessibility the cab, if the cab is available,
+     *                      can be assigned to a customer, otherwise no.
      */
     public Cab(String brand, String model, String licensePlate, int fuelLevel, boolean availability){
         this.brand = brand;
@@ -43,81 +44,98 @@ public class Cab {
         taxiTrips = new ArrayList<TaxiTrip>();
     }
 
+    /**
+     * this constructor method, is only for creating cab objects without defined attributes.
+     */
     public Cab(){
-
     }
 
     /**
-     * This is a getter method for the brand attribute.
+     * This method is used only to return the cab brand name.
      *
-     * @return the brand attribute.
+     * @return  the value of the brand attribute.
      */
     public String getBrand() {
         return brand;
     }
 
     /**
-     * This is a getter method for the model attribute.
+     * This method is used only to return the cab model name.
      *
-     * @return the model attribute.
+     * @return  the value of the taxi model name.
      */
     public String getModel() {
         return model;
     }
 
     /**
-     * This is a getter method for the licensePlate attribute.
+     * This method is used only to return cab license attribute.
      *
-     * @return the licensePlate attribute.
+     * @return  the value of the cab licensePlate attribute.
      */
     public String getLicensePlate() {
         return licensePlate;
     }
 
     /**
-     * This is a getter method for the fuelLevel attribute.
+     * This method returns the fuel level of the cab.
      *
-     * @return the fuelLevel attribute.
+     * @return  the fuel level of the cab.
      */
     public int getFuelLevel() {
         return fuelLevel;
     }
 
     /**
-     * This is a setter method for the fuelLevel attribute.
+     * This set method is used for to set or change fuel level of the cab.
      *
-     * @param fuelLevel this is the fuel Level of the Car.
+     * @param fuelLevel the fuel Level of the Cab. If the fue level is zero,
+     *                  the cab will not be available, otherwise yes.
      */
     public void setFuelLevel(int fuelLevel) {
         this.fuelLevel = fuelLevel;
     }
 
     /**
-     * This is a getter method for the availability attribute.
+     * This method returns if the cab is available or not with a boolean value.
      *
-     * @return availability attribute.
+     * @return the availability attribute of the cab.
      */
     public boolean getAvailability(){
         return availability;
     }
 
     /**
-     * This is a setter method for the availability attribute.
+     * This set method is used to set or change the availability of the cab.
+     * this is only measured with a boolean value.
      *
-     * @param availability this is the availability of the Car.
+     * @param availability The availability of the Car. If is available,
+     *                     the cab will work, otherwise no.
      */
     public void setAvailability(boolean availability) {
         this.availability = availability;
     }
 
+    /**
+     * This set method is used to set or change a driver to cab.
+     *
+     * @param driver The driver assigned of the Car.
+     *               This attribute driver is only of the class Driver.
+     */
     public void setDriver(Driver driver){
         this.driver = driver;
     }
+
 
     public void resetDriver(){
         this.driver=null;
     }
 
+    /**
+     * This set method is used to add a cab in taxiTrip list.
+     *
+     * @param taxiTrip The taxiTrip that stored the cab in list.
+     */
     public void addTaxiTrip(TaxiTrip taxiTrip){
         taxiTrips.add(taxiTrip);
     }

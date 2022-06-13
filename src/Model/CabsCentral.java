@@ -1,26 +1,64 @@
+/**
+ * This class centralizes all classes used in the offer of cab service.
+ *
+ * This class stores our cabs and drivers list in real life and has logic to assign a cab to a user that need it.
+ *
+ * @author JuanPabloA
+ */
 package Model;
 
 import DataBase.CabDataBase;
 import DataBase.DriverDataBase;
+
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
- *This class centralizes all classes used in the offer of cab service.
- *This class manipulates our cabs and drivers list in real life and has logic to assign a cab to a user that needs it.
+ * This class contains necessary data for management tha cab central.
+ * This class manages everything based on lists and instances of the other classes,
+ * is also responsible for assigning a passenger to cab, and know if the cab is available.
+ * <p>
+ * All lists save objects of a specific class type.
+ * With this we manage more easily
  *
- * @author The Negasonic Teenage Warhead
+ * @autor The Negasonic Teenage Warhead
  */
 public class CabsCentral {
     private ArrayList<Cab> cabsList;
     private ArrayList<Driver> driversList;
+
     private ArrayList<Driver> driverRecord;
     private ArrayList<Cab> cabRecord;
     private ArrayList<TaxiTrip> taxiTripsRecord;
+
     private CabDataBase cabDataBase = new CabDataBase();
     private DriverDataBase driverDataBase = new DriverDataBase();
 
     /**
-     * This constructor of cabs central, initializes de list of objects that will be used to store the historic data.
+     * This method constructor is used for get the cabs, drivers and manage them.
+     * All attributes cabsList and driversList are initialized based on the arguments
+     * received in the parameters.
+     * <p>
+     * The taxiTripsRecord,cabRecord and driverRecord are for the registration
+     * of each trip, cab and driver.
+     *
+     * @param cabsList         the cabs list of cab central management.
+     *                         Can only be Cab type stored objects.
+     * @param driversList      the drivers list of cab central management.
+     *                         Can only be Driver type stored objects.
+     */
+    public CabsCentral(ArrayList<Cab> cabsList, ArrayList<Driver> driversList) {
+        this.cabsList = cabsList;
+        this.driversList = driversList;
+        this.taxiTripsRecord = new ArrayList<>();
+        this.cabRecord = new ArrayList<>();
+        this.driverRecord = new ArrayList<>();
+    }
+
+    /**
+     * This second method constructor is used for registration of trip, cab and driver.
+     * The taxiTripsRecord,cabRecord and driverRecord are for the registration
+     * of each trip, cab and driver.
      */
     public CabsCentral(){
         this.taxiTripsRecord = new ArrayList<>();
@@ -29,10 +67,16 @@ public class CabsCentral {
     }
 
     /**
-     * This is the main method to send a taxi cap to client.
+     * This method constructor is used to verify and send a taxi to a customer.
+     * This check if cab is availability or not for assign to a client, otherwise
+     * it does not assign it to anyone.
+     * <p>
+     * the null is to know that the taxi has no one assigned and in case you are not busy,
+     * set the availability of the driver and the taxi in false.
      *
-     * @param taxiTrip receives the taxi trip that is asking for a cab.
-     * @return a free cab or a null cab if it does not exists free cabs.
+     * @param taxiTrip         the cabs list of cab central management.
+     *                         Can only be Cab type stored objects.
+     * @return the cab state. whether it is with passenger or not.
      */
     public Cab sendCabToClient(TaxiTrip taxiTrip){
         Cab cab = getCabAvailable();
@@ -53,11 +97,11 @@ public class CabsCentral {
         return cab;
     }
 
-
     /**
-     * Method to get an available cab from our cabs list.
+     * This method is used only to return if cab is available or not.
+     * This method verify with a list tour of all cabs.
      *
-     * @return free cab or null cab if there isn't available cabs.
+     * @return  the cabFound if cab is available or not.
      */
     private Cab getCabAvailable() {
         Cab cabFound = null;
@@ -71,9 +115,12 @@ public class CabsCentral {
     }
 
     /**
-     * Method to create a list of available drivers.
+     * This method is used to return if driver the list of available drivers.
+     * This method verify with a list tour of all driversList for see whether or no to put it in.
      *
-     * @return the list of available drivers.
+     * @return  the list of available drivers. With this we ensure only to get
+     *          the available drivers.
+     *
      */
     public ArrayList<Driver> getDriversAvailableList(){
         ArrayList<Driver> driversAvailableList = new ArrayList<>();
@@ -84,10 +131,9 @@ public class CabsCentral {
     }
 
     /**
+     * This method is used to get a random driver available.
      *
-     * Method to get any random available driver from list of available drivers.
-     *
-     * @return an available driver or a null driver if there isn't.
+     * @return  the random driver available.
      */
     private Driver getRandomDriverAvailable() {
         ArrayList<Driver> driversAvailableList = getDriversAvailableList();
@@ -98,52 +144,56 @@ public class CabsCentral {
     }
 
     /**
-     * Method to set free any busy cab, simulating that it arrives to his destiny.
+     * This set method is used to set free, any cab busy.
+     * this method checks through a route on the list of taxis, and if he’s not busy,
+     * but if there’s a driver, then he sets the cab free again.
      */
     private void setFreeAnyBusyCab() {
         for (Cab cab:cabsList){
             if(!cab.getAvailability()&&cab.driver!=null){
                 cab.setAvailability(true);
                 cab.driver.setAvailability(true);
-                cab.driver=null;
+                cab.driver=null;////
                 break;
             }
         }
     }
 
     /**
-     * Method to initializes the cabs list with a database of cabs
+     * This set method is used only for setting Cabs list.
      *
-     * @param cabsList is the database of cabs.
+     * @param cabsList the cabs list, available or not.
      */
     public void setCabsList(ArrayList<Cab> cabsList){
         this.cabsList = cabsList;
     }
 
     /**
-     * Method to get the cabs list.
+     * This method returns drivers list, whether they are available or not.
      *
-     * @return the cabs list.
+     * @return the  drivers list, whether they are available or not.
      */
     public ArrayList<Driver> getDriversList() {
         return driversList;
     }
+
     /**
-     * Method to initializes the drivers list with a database of drivers
+     * This set method is used only for setting drivers list.
      *
-     * @param driversList is the database of drivers.
+     * @param driversList the drivers list, available or not.
      */
     public void setDriversList(ArrayList<Driver> driversList){ this.driversList=driversList;}
 
     /**
-     * Generate the database of cabs.
+     * This method generate Cab list in based to database of list cabs.
      */
     public void generateCabList(){
         cabDataBase.generateCabList();
         setCabsList(cabDataBase.getCabList());
     }
+
     /**
-     * Generate the database of drivers.
+     * This method generate Drivers list in based on the drivers list database.
      */
     public void generateDriverList(){
         driverDataBase.generateDriverList();
@@ -151,48 +201,63 @@ public class CabsCentral {
     }
 
     /**
-     * Method to get the drivers stored list.
+     * This method returns the driver record or history.
      *
-     * @return the drivers stored list.
+     * @return  the driver record or history.
      */
     public ArrayList<Driver> getDriverRecord() {
         return driverRecord;
     }
 
+    public void setDriverRecord(ArrayList<Driver> driverRecord) {
+        this.driverRecord = driverRecord;
+    }
+
     /**
-     * Method to get the cabs stored list.
+     * This method returns the cab record or history.
      *
-     * @return the cabs stored list.
+     * @return  the cab record or history.
      */
     public ArrayList<Cab> getCabRecord() {
         return cabRecord;
     }
 
+    public void setCabRecord(ArrayList<Cab> cabRecord) {
+        this.cabRecord = cabRecord;
+    }
+
     /**
-     * Method to get the taxi stored trips.
+     * This method returns taxi trips record or history.
+     * this method can only return an attribute of the taxi trip class.
      *
-     * @return the taxi stored trips.
+     * @return  the taxi trips record or history.
      */
     public ArrayList<TaxiTrip> getTaxiTripsRecord() {
         return taxiTripsRecord;
     }
 
+    public void setTaxiTripsRecord(ArrayList<TaxiTrip> taxiTripsRecord) {
+        this.taxiTripsRecord = taxiTripsRecord;
+    }
+
     /**
-     * Method to add a driver in drivers list store.
+     * This method adds a driver in the driver record.
      *
-     * @param driver that will be added to list.
+     * @param driver    the driver in the driver record.
      */
     public void addDriverInDriverRecord(Driver driver){driverRecord.add(driver);}
+
     /**
-     * Method to add a cab in cabs list store.
+     * This method adds a cab in the cab record.
      *
-     * @param cab that will be added to list.
+     * @param cab       the cab in the cab record.
      */
     public void addCabInCabRecord(Cab cab){cabRecord.add(cab);}
+
     /**
-     * Method to add a taxiTrip in taxiTrip list store.
+     * This method adds a taxi trip in the taxi trips record.
      *
-     * @param taxiTrip that will be added to list.
+     * @param taxiTrip    the taxi trip in the taxi trips record.
      */
     public void addTaxiTripRecord(TaxiTrip taxiTrip){taxiTripsRecord.add(taxiTrip);}
 
