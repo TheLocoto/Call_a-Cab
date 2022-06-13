@@ -18,12 +18,12 @@ public class ChargeBar {
         try {
             for (int counter = 0; counter < randomNumber; counter++) {
                 TimeUnit.MILLISECONDS.sleep(250);
-                System.out.print("=");
+                System.out.print(Color.WHITE.color+"=");
             }
         }catch(Exception e) {
             System.out.println(e);
         }
-        System.out.println("=");
+        System.out.println(Color.WHITE.color+"=");
     }
 }
 

@@ -15,18 +15,19 @@ public class CarTour {
      */
     public void carTour(){
         int randomNumber = (int)(Math.random() * 10-5+1) + 5;
+        System.out.println(Color.WHITE.color+"=================ROUTE=================");
         try {
             for (int counter = 0; counter < randomNumber; counter++) {
                 TimeUnit.SECONDS.sleep(1);
                 if ((counter%3)==0) {
-                    System.out.println("──▄▄▐▀▀▀▀▀▀▀▀▀▀▀▌▄▄──");
+                    System.out.println(Color.BLACK.color+"──▄▄▐▀▀▀▀▀▀▀▀▀▀▀▌▄▄──");
                     System.out.println("─▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█▄▄▄─");
                     System.out.println("─█▄█░░█▓█▓█▓█▓█░░█▄█▌");
                     System.out.println("─▓▓█▀███████████▀█▓▓──");
                     System.out.println("─▓▓▀▀───────────▀▀▓▓──");
                 }
                 else{
-                    System.out.println("░░░░░░░░░███░░░░░░░░░");
+                    System.out.println(Color.WHITE.color+"░░░░░░░░░███░░░░░░░░░");
                     System.out.println("░░░░░░░░░███░░░░░░░░░");
                     System.out.println("░░░░░░░░░███░░░░░░░░░");
                     System.out.println("░░░░░░░░░███░░░░░░░░░");
@@ -36,5 +37,6 @@ public class CarTour {
         }catch(Exception e) {
             System.out.println(e);
         }
+        System.out.println(Color.WHITE.color+"============END OF THE ROAD===========");
     }
 }

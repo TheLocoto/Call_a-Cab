@@ -3,6 +3,7 @@ import Model.Cab;
 import Model.Driver;
 import Model.TaxiTrip;
 import Utils.ChargeBar;
+import Utils.Color;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,9 +29,9 @@ public class CabsCentralView {
      * This method prints a little message with a welcome text.
      */
     public void showWelcome(){
-        System.out.println("---------------------------");
-        System.out.println("Welcome to CALL-A-CAB!");
-        System.out.println("---------------------------");
+        System.out.println(Color.RED.color+"---------------------------");
+        System.out.println(Color.RED.color+"Welcome to CALL-A-CAB!");
+        System.out.println(Color.RED.color+"---------------------------");
     }
 
     /**
@@ -39,8 +40,11 @@ public class CabsCentralView {
      * @param cab receives an object cab if the process was successful and null if not.
      */
     public void showTaxiTripStatusMessage(Cab cab){
-        if(cab!=null && cab.driver!=null) System.out.println("We assigned you a cab with a license plate "+cab.getLicensePlate()+"\nconducted by "+cab.driver.getName());
-        else System.out.println("No taxi found please try again later");
+        System.out.println(Color.GREEN.color+"=====================================");
+        if(cab!=null && cab.driver!=null) System.out.println(Color.GREEN.color+"We assigned you a cab with a license " +
+                "plate "+cab.getLicensePlate()+"\nconducted by "+cab.driver.getName());
+        else System.out.println(Color.YELLOW_BOLD.color+"No taxi found please try again later");
+        System.out.println(Color.GREEN.color+"=====================================");
     }
 
     public void assignCabToClient(){}
@@ -55,18 +59,20 @@ public class CabsCentralView {
      * This method shows the animation when it is assigning a cab and a driver to any client.
      */
     public void assigningTaxiMessage(){
-        System.out.println("Assigning you a taxi and driver");
+        System.out.println(Color.BLUE.color+"Assigning you a taxi and driver");
         chargeBar.chargeBar();
-        System.out.println("Finish");
+        System.out.println(Color.BLUE.color+"Finish");
+        System.out.println(Color.BLUE.color+"==============================");
     }
 
     /**
      * This method shows the animation simulating that it is confirming that will send a cab.
      */
     public void confirmShipmentMessage(){
-        System.out.println("Confirming the shipment of your taxi trip");
+        System.out.println(Color.BLUE.color+"==============================");
+        System.out.println(Color.BLUE.color+"Confirming the shipment of your taxi trip");
         chargeBar.chargeBar();
-        System.out.println("Finish");
+        System.out.println(Color.BLUE.color+"Finish");
     }
 
     /**
@@ -76,9 +82,9 @@ public class CabsCentralView {
      */
     public int clientMenuSecondView(){
         int opcion;
-        System.out.println("Do you need another taxi?");
-        System.out.println("1: Yes");
-        System.out.println("2: No");
+        System.out.println(Color.RED.color+"Do you need another taxi?");
+        System.out.println(Color.BLUE.color+"1:" + Color.WHITE.color + " Yes");
+        System.out.println(Color.BLUE.color+"2:" + Color.WHITE.color + " No");
         opcion = input.nextInt();
         return  opcion;
     }
@@ -90,9 +96,9 @@ public class CabsCentralView {
      */
     public int clientMenuFirstView(){
         int opcion;
-        System.out.println("Do you need a taxi?");
-        System.out.println("1: Yes");
-        System.out.println("2: No");
+        System.out.println(Color.RED.color+"Do you need a taxi?");
+        System.out.println(Color.BLUE.color+"1:" + Color.WHITE.color + " Yes");
+        System.out.println(Color.BLUE.color+"2:" + Color.WHITE.color + " No");
         opcion = input.nextInt();
         return  opcion;
     }
@@ -106,11 +112,14 @@ public class CabsCentralView {
      */
     public void showRecordList(ArrayList<TaxiTrip> taxiTripsRecord,ArrayList<Driver> DriverRecord,
                                ArrayList<Cab> cabRecord){
+        System.out.println(Color.RED.color+"Travel History");
         for (int i=0;i<taxiTripsRecord.size();i++){
-            System.out.println("The trip with destiny " + taxiTripsRecord.get(i).getDestiny() + " address " +
-                    taxiTripsRecord.get(i).getAddress() + "\nand a cost of " + taxiTripsRecord.get(i).getCost() +
-                    "\nwas given by " + DriverRecord.get(i).getName() + " in a license plate car " +
-                    cabRecord.get(i).getLicensePlate());
+            System.out.println(Color.PURPLE.color+"==================================================================");
+            System.out.println((i+1) +": The trip with destiny " + taxiTripsRecord.get(i).getDestiny()
+                    + " address " + taxiTripsRecord.get(i).getAddress() + "\nand a cost of " +
+                    taxiTripsRecord.get(i).getCost() + "\nwas given by " + DriverRecord.get(i).getName()
+                    + " in a license plate car " + cabRecord.get(i).getLicensePlate());
+            System.out.println("==================================================================");
         }
     }
 

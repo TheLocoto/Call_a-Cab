@@ -259,6 +259,9 @@ public class CabsCentral {
      *
      * @param taxiTrip    the taxi trip in the taxi trips record.
      */
-    public void addTaxiTripRecord(TaxiTrip taxiTrip){taxiTripsRecord.add(taxiTrip);}
+    public void addTaxiTripRecord(TaxiTrip taxiTrip){
+        TaxiTrip newTaxiTrip = new TaxiTrip(taxiTrip.getPassenger(), taxiTrip.getAddress(), taxiTrip.getDestiny(),
+                taxiTrip.getCost());
+        taxiTripsRecord.add(newTaxiTrip);}
 
 }

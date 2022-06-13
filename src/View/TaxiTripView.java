@@ -1,6 +1,7 @@
 package View;
 
 import Model.TaxiTrip;
+import Utils.Color;
 
 import java.util.Scanner;
 
@@ -26,7 +27,8 @@ public class TaxiTripView {
      * This method is used to print on the screen a message to ask the user for data.
      */
     public void taxiTripRequestMessage(){
-        System.out.println("PLEASE ENTER YOUR DATES");
+        System.out.println(Color.RED.color+"==============================");
+        System.out.println("Please enter your dates");
     }
 
     /**
@@ -35,9 +37,9 @@ public class TaxiTripView {
      * @return the address of the user
      */
     public String enterAddressMessage(){
-        System.out.println("Enter your address");
-        String address = scanner.nextLine();
-        return address;
+        System.out.println(Color.YELLOW_BOLD.color+"Enter your address");
+        String adress = scanner.nextLine();
+        return adress;
     }
 
     /**
@@ -46,7 +48,7 @@ public class TaxiTripView {
      * @return the destiny of the user
      */
     public String enterDestinyMessage(){
-        System.out.println("Enter your destiny");
+        System.out.println(Color.YELLOW_BOLD.color+"Enter your destiny");
         String destiny = scanner.nextLine();
         return destiny;
     }
@@ -57,8 +59,9 @@ public class TaxiTripView {
      * @return the number of passengers of the user
      */
     public int enterPassengersMessage(){
-        System.out.println("Enter the number of passengers");
+        System.out.println(Color.YELLOW_BOLD.color+"Enter the number of passengers");
         int passengers = scanner.nextInt();
+        System.out.println(Color.RED.color+"==============================");
         return passengers;
     }
 
@@ -70,11 +73,11 @@ public class TaxiTripView {
      * @param cost the cost of taxi trip
      */
     public void printTaxiTripDetails(String destiny,String address, int passengers, int cost){
-        System.out.println("This is your dates");
-        System.out.println("Address: "+ address);
-        System.out.println("Destiny: " + destiny);
-        System.out.println("Passengers: " + passengers);
-        System.out.println("Cost: " + cost);
+        System.out.println(Color.RED.color+"This is your dates");
+        System.out.println(Color.BLUE.color+"Address: "+ Color.PURPLE.color + address);
+        System.out.println(Color.BLUE.color+"Destiny: " + Color.PURPLE.color + destiny);
+        System.out.println(Color.BLUE.color+"Passengers: " + Color.PURPLE.color + passengers);
+        System.out.println(Color.BLUE.color+"Cost: " + Color.PURPLE.color + cost);
     }
 
     /**
@@ -94,11 +97,11 @@ public class TaxiTripView {
      */
     public int menuTaxiTripMessage(){
         int opcion;
-        System.out.println("Do you agree with the details?");
-        System.out.println("1: Yes, I agree");
-        System.out.println("2: No, I don't like the price");
-        System.out.println("3: No, My dates are incorrect");
-
+        System.out.println(Color.RED.color+"Do you agree with the details?");
+        System.out.println(Color.BLUE.color+"1:" + Color.WHITE.color + " Yes, I agree");
+        System.out.println(Color.BLUE.color+"2:" + Color.WHITE.color + " No, I don't like the price");
+        System.out.println(Color.BLUE.color+"3:" + Color.WHITE.color + " No, My dates are incorrect");
+        System.out.println(Color.RED.color+"==============================");
         opcion = scanner.nextInt();
         return opcion;
     }
@@ -107,20 +110,20 @@ public class TaxiTripView {
      * This method is used to display an error message when inserting a number that is too high
      */
     public void validatePassengersMessage(){
-        System.out.println("The taxi don´t accept more of 5 people");
+        System.out.println(Color.RED.color+"The taxi don´t accept more of 5 people");
     }
 
     /**
      * This method is used to display an error message when the user insert an option greater than three
      */
     public void incorrectAnswer(){
-        System.out.println("Incorrect answer");
+        System.out.println(Color.RED.color+"Incorrect answer");
     }
 
     /**
      * This method is used to display a message when the user confirm their data.
      */
     public void finishMessage(){
-        System.out.println("Thank you! Now we will assign you a driver");
+        System.out.println(Color.GREEN.color+"Thank you! Now we will assign you a driver");
     }
 }

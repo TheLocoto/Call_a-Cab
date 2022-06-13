@@ -89,7 +89,6 @@ public class TaxiTripController {
      * This method is used to display customer data
      */
     public void informationAboutTaxiTrip(){
-        setTaxiTripCost();
         view.printTaxiTripDetails(getTaxiTripDestiny(),getTaxiTripAddress(),getTaxiTripPassengers(),getTaxiTripCost());
     }
 
@@ -108,6 +107,7 @@ public class TaxiTripController {
             passengers = view.enterPassengersMessage();
         }
         setTaxiTripPassengers(passengers);
+        setTaxiTripCost();
     }
 
     /**
