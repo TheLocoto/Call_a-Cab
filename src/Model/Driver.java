@@ -63,7 +63,7 @@ public class Driver {
     /**
      * This set method is used for to set the ci of driver.
      *
-     * @param  ci
+     * @param  ci the ci of driver.
      */
     public void setCi(int ci) {
         this.ci = ci;
@@ -81,7 +81,7 @@ public class Driver {
     /**
      * This set method is used for to set or change the number of driver.
      *
-     * @param  phone
+     * @param  phone the phone number of driver.
      */
     public void setPhone(int phone) {
         this.phone = phone;
@@ -99,7 +99,7 @@ public class Driver {
     /**
      * This set method is used for to set or change the age of driver.
      *
-     * @param   age
+     * @param   age the age of driver.
      */
     public void setAge(int age) {
         this.age = age;
