@@ -28,6 +28,7 @@ public class TaxiTrip {
         this.passenger = passenger;
         this.address = address;
         this.destiny = destiny;
+        this.cost = cost;
     }
 
     /**
