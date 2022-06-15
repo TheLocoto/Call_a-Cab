@@ -85,6 +85,16 @@ public class TaxiTripController(){
     
 }
 ```
+## Extra Feauters
+- We add a Utils package, so that the console messages are more aesthetic.
+  Inside this package are the classes:
+    - CarTour, represents a simulation of the taxi route.
+    - ChargeBar, is responsible for printing a load bar.
+    - Color, they are colors that we will use in the messages of the classes of the View package.
+- We add the DataBase package, we find a database simulation using tables.
+  Inside this package are the classes:
+    - CabDataBase, DriverDataBase, taxiTripDataBase.
+      In these classes we create objects, then store them in a list and then return it with a getter method.
 
 ## Roadmap
 - We want to add various types of cars, like as party limousines,
